@@ -19,6 +19,7 @@ public class Tama {
 		show.pack();
 		show.setResizable(false);
 		createPets(show);
+		
 		createFeedButton(show); 
 		createCleanButton(show); 
 		createResetButton(show); 
@@ -35,15 +36,16 @@ public class Tama {
 		show.add(pet);
 	}
 	public static void createSettings(JFrame show) {
+//		ImageIcon b = new ImageIcon(Tama.class.getResource("Images/Border.png"));
+//		JLabel border = new JLabel(b);
+//		show.setPreferredSize(new Dimension(b.getIconWidth(), b.getIconHeight()));
+//		border.setBounds(-2, -2, 205, 255);
+//		show.add(border);
+		show.setContentPane(new JLabel(new ImageIcon(Tama.class.getResource("Images/Border.png"))));
+		
 		JLabel health = new JLabel(new ImageIcon(Tama.class.getResource("Images/HealthBar.png"))); 
 		health.setBounds(65, 35, 107, 7);
 		show.add(health);
-		
-		ImageIcon b = new ImageIcon(Tama.class.getResource("Images/Border.png"));
-		JLabel border = new JLabel(b);
-		show.setPreferredSize(new Dimension(b.getIconWidth(), b.getIconHeight()));
-		border.setBounds(-2, -2, 205, 255);
-		show.add(border);
 	}
 	public static void createFeedButton(JFrame show) {
 		JButton feed = new JButton(new ImageIcon(Tama.class.getResource("Images/FeedButton.png"))); 

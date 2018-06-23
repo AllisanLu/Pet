@@ -13,7 +13,7 @@ public class Tama {
 		ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));
 		createSettings(show);
 		
-		//show.setPreferredSize(new Dimension(216, 289));
+		show.setPreferredSize(new Dimension(206, 279));
 		show.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		show.setIconImage(img.getImage());
 		show.pack();
@@ -22,7 +22,7 @@ public class Tama {
 		createFeedButton(show); 
 		createCleanButton(show); 
 		createResetButton(show); 
-		
+
 		JLabel empty = new JLabel("");
 		show.add(empty);
 		show.setVisible(true);
@@ -42,7 +42,7 @@ public class Tama {
 		ImageIcon b = new ImageIcon(Tama.class.getResource("Images/Border.png"));
 		JLabel border = new JLabel(b);
 		show.setPreferredSize(new Dimension(b.getIconWidth(), b.getIconHeight()));
-		border.setBounds((show.getWidth()/2), show.getHeight()/2, 205, 255);
+		border.setBounds(-2, -2, 205, 255);
 		show.add(border);
 	}
 	public static void createFeedButton(JFrame show) {

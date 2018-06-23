@@ -1,7 +1,6 @@
 package game;
 import java.awt.Dimension;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -9,8 +8,6 @@ import javax.swing.JButton;
 public class Tama {
 	public static void showPet() {
 		JFrame show = new JFrame("Tamagachi");
-		JPanel panel = new JPanel();
-		panel.setLayout(null);
 		ImageIcon img = new ImageIcon("C:/Users/Allison/OneDrive/programming/Tomogachi/egg icon.png");
 		createSettings(show);
 		
@@ -23,9 +20,6 @@ public class Tama {
 		createFeedButton(show);
 		createCleanButton(show);
 		createResetButton(show);
-		//Buttons here = new Buttons(show);
-		//here.setSize(100, 100);
-		//here.setVisible(true);
 		
 		JLabel empty = new JLabel("");
 		show.add(empty);

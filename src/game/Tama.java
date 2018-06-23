@@ -9,8 +9,10 @@ public class Tama {
 	
 	public static void showPet() {
 		JFrame show = new JFrame("Tamagachi");
+
 		show.setLayout(null);
 		ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));
+
 		createSettings(show);
 		
 		show.setPreferredSize(new Dimension(206, 279));
@@ -19,11 +21,11 @@ public class Tama {
 		show.pack();
 		show.setResizable(false);
 		createPets(show);
-		
-		createFeedButton(show); 
-		createCleanButton(show); 
-		createResetButton(show); 
 
+		createFeedButton(show);
+		createCleanButton(show);
+		createResetButton(show);
+    
 		JLabel empty = new JLabel("");
 		show.add(empty);
 		show.setVisible(true);

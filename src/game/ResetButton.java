@@ -16,7 +16,6 @@ public class ResetButton implements ActionListener{
 		
 		
 	}
-
 }
 
 class FeedButton implements ActionListener{
@@ -28,9 +27,9 @@ class FeedButton implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("BABY HAS BEEN FED");
 
-		Tama.food++;
-		if(food == 10) {
-			grow(tom,food);
+
+		if(Tama.food == 10) {
+			Tama.grow(Tama.tom,Tama.food);
 		}
 		
 	}

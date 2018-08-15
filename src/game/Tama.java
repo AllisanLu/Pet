@@ -12,14 +12,18 @@ public class Tama{
 	static JLabel tom;
 	static int health = 6;
 	static int petState = 0;
+	static JFrame show = new JFrame("Tamagachi");
 	
 	public static void grow(JLabel pet, int food) {
-		pet = new JLabel(new ImageIcon(Tama.class.getResource("Images/Lizard1.png")));
+		show.remove(pet);
+		JLabel lizard = new JLabel(new ImageIcon(Tama.class.getResource("Images/Lizard1.gif")));
+		lizard.setBounds((show.getWidth()/2)-29, 150, 58, 49);
 		petState ++;
+		show.add(lizard);
+		reDrawWindow(show);
 	}
 	
 	public static void showPet() {
-		JFrame show = new JFrame("Tamagachi");
 
 		show.setLayout(null);
 		ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));

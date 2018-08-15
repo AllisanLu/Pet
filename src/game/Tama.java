@@ -8,12 +8,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Tama{
-	static int food;
+	static int food = 0;
 	static JLabel tom;
-	static int health;
+	static int health = 6;
+	static int petState = 0;
 	
 	public static void grow(JLabel pet, int food) {
 		pet = new JLabel(new ImageIcon(Tama.class.getResource("Images/Lizard1.png")));
+		petState ++;
 	}
 	
 	public static void showPet() {

@@ -87,8 +87,5 @@ public class Tama{
 	public static void main(String[] args) {
 		food = 0;
 		showPet();
-		if(food == 10) {
-			grow(tom,food);
-		}
 	}
 }

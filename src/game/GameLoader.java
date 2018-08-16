@@ -14,6 +14,7 @@ public class GameLoader {
         file = new File(GameSaver.class.getResource("bin/gameSaved.txt").toString());
         if(!file.exists()) {
             file.createNewFile();
+            System.out.println("FIle ahs been created");
         }
     }
 }

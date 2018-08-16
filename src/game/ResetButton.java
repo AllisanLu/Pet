@@ -27,9 +27,20 @@ class FeedButton implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("BABY HAS BEEN FED");
 
+<<<<<<< HEAD
 		Driver.getTama().incrementFood(1);
 		if(Driver.getTama().getFood() == 10) {
 			Driver.getTama().grow();
+=======
+
+
+		if(Tama.food == 10) {
+			Tama.grow(Tama.tom,Tama.food);
+
+		Tama.food++;
+		if(Tama.food == 10) {
+			Tama.grow(Tama.tom,Tama.food);
+>>>>>>> 61f5dd8fc1b80678dbb1923b5aea446de0cdf941
 			System.out.println("BABY HAS GROWN UP!");
 		}
 		

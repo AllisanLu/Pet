@@ -8,13 +8,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Tama {
-	private int food = 0;
-	private JLabel tom;
-	private int health = 6;
-	private int petState = 0;
+    private int food = 0;
+    private JLabel tom;
+    private int health = 6;
+    private int petState = 0;
 
+<<<<<<< HEAD
 	public Tama() {
 		Window.showPet(this);
+=======
+    public Tama() {
+        showPet(this);
+>>>>>>> 61f5dd8fc1b80678dbb1923b5aea446de0cdf941
     }
 
     public int getFood() {
@@ -45,6 +50,7 @@ public class Tama {
         return petState;
     }
 
+<<<<<<< HEAD
     public void incrementPetState(int petState) {
 		this.petState += petState;
 	}
@@ -53,4 +59,94 @@ public class Tama {
 		this.incrementPetState(1);
 		Window.growTama(this.petState);
 	}
+=======
+    public void setPetState(int petState) {
+        this.petState = petState;
+    }
+
+
+    public static void showPet(Tama tama) {
+        JFrame show = new JFrame("Tamagachi");
+
+            public static void grow(JLabel pet, int food) {
+                show.remove(pet);
+                JLabel lizard = new JLabel(new ImageIcon(Tama.class.getResource("Images/Lizard1.gif")));
+                lizard.setBounds((show.getWidth() / 2) - 29, 150, 58, 49);
+                petState++;
+                show.add(lizard);
+                reDrawWindow(show);
+            }
+
+            public static void showPet() {
+
+                show.setLayout(null);
+                ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));
+
+                createSettings(show);
+
+                show.setPreferredSize(new Dimension(206, 279));
+                show.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                show.setIconImage(img.getImage());
+                show.pack();
+                show.setResizable(false);
+
+                tama.setTom(createPets(show));
+
+                createFeedButton(show);
+                createCleanButton(show);
+                createResetButton(show);
+
+                JLabel empty = new JLabel("");
+                show.add(empty);
+                show.setVisible(true);
+
+            }
+
+            private static JLabel createPets(JFrame show) {
+                JLabel pet = new JLabel(new ImageIcon(Tama.class.getResource("Images/EggMoving.gif")));
+                pet.setBounds((show.getWidth() / 2) - 12, 170, 22, 27);
+                show.add(pet);
+
+                return pet;
+            }
+
+            private static void createSettings(JFrame show) {
+                show.setContentPane(new JLabel(new ImageIcon(Tama.class.getResource("Images/Border.png"))));
+
+                JLabel health = new JLabel(new ImageIcon(Tama.class.getResource("Images/HealthBar.png")));
+                health.setBounds(65, 35, 107, 7);
+                show.add(health);
+            }
+
+            private static void createFeedButton(JFrame show) {
+                JButton feed = new JButton(new ImageIcon(Tama.class.getResource("Images/FeedButton.png")));
+                feed.setBounds(23, 227, 40, 15);
+                show.add(feed);
+
+                FeedButton feedButton = new FeedButton(feed);
+            }
+
+            private static void createCleanButton(JFrame show) {
+                JButton clean = new JButton(new ImageIcon(Tama.class.getResource("Images/CleanButton.png")));
+                clean.setBounds(81, 227, 40, 15);
+                show.add(clean);
+
+                CleanButton cleanButton = new CleanButton(clean);
+            }
+
+            private static void createResetButton(JFrame show) {
+                JButton reset = new JButton(new ImageIcon(Tama.class.getResource("Images/ResetButton.png")));
+                reset.setBounds(136, 227, 40, 15);
+                show.add(reset);
+
+                ResetButton resetButton = new ResetButton(reset);
+            }
+
+            private static void reDrawWindow(JFrame show) {
+                show.revalidate();
+                show.repaint();
+            }
+        }
+    }
+>>>>>>> 61f5dd8fc1b80678dbb1923b5aea446de0cdf941
 }

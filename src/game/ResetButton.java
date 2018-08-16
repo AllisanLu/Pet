@@ -12,9 +12,7 @@ public class ResetButton implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println("THE RESET HAS BEEN PRESSED UR BABY HAS BEEN REVIVED DONT FUK UP AGAIN");
-		
-		
+		System.out.println("THE RESET HAS BEEN PRESSED");
 	}
 }
 

@@ -11,10 +11,10 @@ public class GameLoader {
     }
 
     public static void makeFile() throws IOException{
-        file = new File(GameSaver.class.getResource("bin/gameSaved.txt").toString());
-        if(!file.exists()) {
-            file.createNewFile();
-            System.out.println("FIle ahs been created");
-        }
+        //System.out.println(GameSaver.class.getResource("bin/gameSaved.txt").toString());
+        file = new File(GameSaver.class.getResource("bin/gameSaved.txt"));
+        file.createNewFile();
+        System.out.println("FIle ahs been created");
     }
 }
+

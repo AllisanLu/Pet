@@ -28,18 +28,11 @@ class FeedButton implements ActionListener{
 		System.out.println("BABY HAS BEEN FED");
 
 
-
-		if(Tama.food == 10) {
-			Tama.grow(Tama.tom,Tama.food);
-
-		Tama.food++;
-		if(Tama.food == 10) {
-			Tama.grow(Tama.tom,Tama.food);
-			System.out.println("BABY HAS GROWN UP!");
-		}
-		
+		Driver.getTama().incrementFood(1);
+		if(Driver.getTama().getFood() == 10) {
+            Driver.getTama().grow();
+        }
 	}
-	
 }
 
 class CleanButton implements ActionListener{
@@ -52,5 +45,4 @@ class CleanButton implements ActionListener{
 		System.out.println("ALL THE POOP IS GONE");
 		
 	}
-	
 }

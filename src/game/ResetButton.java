@@ -12,7 +12,11 @@ public class ResetButton implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+<<<<<<< HEAD
 		System.out.println("THE RESET HAS BEEN PRESSED UR BABY HAS BEEN REVIVED DONT FUK UP AGAIN");
+=======
+		System.out.println("THE RESET HAS BEEN PRESSED");
+>>>>>>> f7434db5611964fa1e093242947f2f831886ad98
 	}
 }
 
@@ -28,6 +32,7 @@ class FeedButton implements ActionListener{
 
 		Driver.getTama().incrementFood(1);
 		if(Driver.getTama().getFood() == 10) {
+<<<<<<< HEAD
 			Driver.getTama().grow();
 			System.out.println("BABY HAS GROWN UP!");
 		}
@@ -35,6 +40,8 @@ class FeedButton implements ActionListener{
 
 		Driver.getTama().incrementFood(1);
 		if(Driver.getTama().getFood() == 10) {
+=======
+>>>>>>> f7434db5611964fa1e093242947f2f831886ad98
             Driver.getTama().grow();
         }
 	}

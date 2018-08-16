@@ -12,6 +12,7 @@ public class GameLoader {
         return file;
     }
 
+<<<<<<< HEAD
     public static void makeFile() {
         file = new File("bin/saveData.txt");
         System.out.println(file.getAbsoluteFile());
@@ -37,5 +38,13 @@ public class GameLoader {
         for(String strs : gameState.split(" ")) {
             System.out.println(strs);
         }
+=======
+    public static void makeFile() throws IOException{
+        //System.out.println(GameSaver.class.getResource("bin/gameSaved.txt").toString());
+        file = new File(GameSaver.class.getResource("bin/gameSaved.txt"));
+        file.createNewFile();
+        System.out.println("FIle ahs been created");
+>>>>>>> f7434db5611964fa1e093242947f2f831886ad98
     }
 }
+

@@ -15,7 +15,6 @@ public class GameLoader {
 
     public static void makeFile() {
         file = new File("bin/saveData.txt");
-        System.out.println(file.getAbsoluteFile());
         try {
             file.createNewFile();
         } catch (Exception IOException) {
@@ -33,10 +32,9 @@ public class GameLoader {
         String gameState = "";
         while (reader.hasNext()) {
             gameState += reader.nextLine();
-            System.out.println(gameState);
         }
+
         for (String strs : gameState.split(" ")) {
-            System.out.println(strs);
         }
     }
 }

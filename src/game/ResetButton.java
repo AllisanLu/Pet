@@ -13,12 +13,14 @@ public class ResetButton implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		System.out.println("THE RESET HAS BEEN PRESSED UR BABY HAS BEEN REVIVED DONT FUK UP AGAIN");
-		System.out.println("THE RESET HAS BEEN PRESSED");
 	}
 }
 
 class FeedButton implements ActionListener{
-	
+
+	private int[] levelUp = { 10, 20, 30, 40, };
+	private int levelCounter = 0;
+
 	public FeedButton(JButton food) {
 		food.addActionListener(this);
 	}
@@ -27,7 +29,8 @@ class FeedButton implements ActionListener{
 		System.out.println("BABY HAS BEEN FED");
 
 		Driver.getTama().incrementFood(1);
-		if(Driver.getTama().getFood() == 10) {
+		if(Driver.getTama().getFood() >= levelUp[levelCounter]) {
+			levelCounter++;
 			Driver.getTama().grow();
 			System.out.println("BABY HAS GROWN UP!");
 		}

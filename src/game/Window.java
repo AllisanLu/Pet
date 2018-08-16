@@ -2,14 +2,22 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.JLabel;
 
 public class Window extends JLabel {
 
 
     public static void growTama(int petState) {
-        JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
-        lizard.setBounds(100,100,100,100);
-        Driver.getTama().setTom(lizard);
+        switch(petState){
+            case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/Egg.png")));
+                    egg.setBounds(100,100,100,100);
+                    Driver.getTama().setTom(egg);
+                break;
+            case 1: JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
+                    lizard.setBounds(100,100,100,100);
+                    Driver.getTama().setTom(lizard);
+                break;
+        }
     }
 
     public static void showPet(Tama jerry) {

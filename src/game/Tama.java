@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+<<<<<<< HEAD
 public class Tama {
 	private int food = 0;
 	private JLabel tom;
@@ -55,6 +56,25 @@ public class Tama {
 	
 	public static void showPet(Tama tama) {
 		JFrame show = new JFrame("Tamagachi");
+=======
+public class Tama{
+	static int food = 0;
+	static JLabel tom;
+	static int health = 6;
+	static int petState = 0;
+	static JFrame show = new JFrame("Tamagachi");
+	
+	public static void grow(JLabel pet, int food) {
+		show.remove(pet);
+		JLabel lizard = new JLabel(new ImageIcon(Tama.class.getResource("Images/Lizard1.gif")));
+		lizard.setBounds((show.getWidth()/2)-29, 150, 58, 49);
+		petState ++;
+		show.add(lizard);
+		reDrawWindow(show);
+	}
+	
+	public static void showPet() {
+>>>>>>> b378229fbad5cd74bf1d8480f3293238c55ed6c2
 
 		show.setLayout(null);
 		ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));

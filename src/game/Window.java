@@ -1,5 +1,8 @@
 package game;
 
+import game.buttons.FeedButton;
+import game.buttons.CleanButton;
+import game.buttons.ResetButton;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.JLabel;

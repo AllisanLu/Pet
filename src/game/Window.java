@@ -1,14 +1,11 @@
 package game;
 
 import game.File.GameSaver;
-import game.buttons.FeedButton;
-import game.buttons.CleanButton;
-import game.buttons.ResetButton;
+import game.buttons.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import javax.swing.JLabel;
 
 public class Window extends JLabel implements WindowListener {
 

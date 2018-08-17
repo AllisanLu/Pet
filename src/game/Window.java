@@ -13,15 +13,15 @@ import javax.swing.JLabel;
 public class Window extends JLabel implements WindowListener {
 
 
-    public static void growTama(int petState) {
+    public static void growTama(int petState, Tama jerry) {
         switch(petState){
             case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/Egg.png")));
                     egg.setBounds(100,100,100,100);
-                    Driver.getTama().setTom(egg);
+                    jerry.setTom(egg);
                 break;
             case 1: JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
                     lizard.setBounds(100,100,100,100);
-                    Driver.getTama().setTom(lizard);
+                    jerry.setTom(lizard);
                 break;
         }
     }

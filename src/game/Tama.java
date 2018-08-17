@@ -51,12 +51,13 @@ public class Tama {
     public void setPetState(int petState) {
         this.petState = petState;
     }
+    
     public void incrementPetState(int petState) {
         this.petState += petState;
     }
 
     public void grow() {
 	    this.petState += 1;
-        Window.growTama(this.petState);
+        Window.growTama(this.petState, this);
     }
 }

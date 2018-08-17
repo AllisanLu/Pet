@@ -7,13 +7,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class GameSaver {
-    public GameSaver(Tama jerry) throws IOException {
-        FileWriter pen = new FileWriter(GameLoader.getFile());
+
+    private FileWriter pen;
+
+    public GameSaver(Tama jerry) {
+
         String[] labels = {"food: ", "health: ", "pet state: "};
         int[] values = {jerry.getFood(), jerry.getHealth(), jerry.getPetState()};
 
-        for (int i = 0; i < values.length; i++) {
-            pen.write(labels[i] + values[i] + "\n");
+        try {
+             pen = new FileWriter(GameLoader.getFile());
+
+            for (int i = 0; i < values.length; i++) {
+                pen.write(labels[i] + values[i] + "\n");
+            }
+        } catch(Exception IOException) {
+            System.out.println("File Writer messed up. \n Could not save game.");
         }
+
     }
 }

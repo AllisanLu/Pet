@@ -4,14 +4,14 @@ import javax.swing.JLabel;
 import javax.swing.*;
 
 public class Tama {
-    private int food = 0;
+    private int food, health, petState;
     private JLabel tom;
-    private int health = 6;
-    private int petState = 0;
-
 
 
 	public Tama() {
+	    food = 0;
+	    health = 0;
+	    petState = 0;
 		Window.showPet(this);
 	}
 

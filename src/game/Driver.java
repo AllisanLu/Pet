@@ -15,13 +15,6 @@ public class Driver {
         }catch (Exception IoException){
             System.out.println("error in Game Laoder");
         }
-
-        show.addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                GameSaver.gameSaver();
-            }
-        });
     }
 
     public static Tama getTama() {

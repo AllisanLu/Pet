@@ -1,13 +1,16 @@
 package game;
 
+import game.File.GameSaver;
 import game.buttons.FeedButton;
 import game.buttons.CleanButton;
 import game.buttons.ResetButton;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.JLabel;
 
-public class Window extends JLabel {
+public class Window extends JLabel implements WindowListener {
 
 
     public static void growTama(int petState) {
@@ -86,5 +89,41 @@ public class Window extends JLabel {
     private static void reDrawWindow(JFrame show) {
         show.revalidate();
         show.repaint();
+    }
+
+    //Window Activated methods from the interface WindowListener
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        new GameSaver(Driver.getTama());
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }

@@ -19,6 +19,7 @@ public class GameSaver {
 
         try {
              pen = new FileWriter(GameLoader.getFile());
+             //System.out.println("Got file!");
 
             for (int i = 0; i < values.length; i++) {
                 pen.write(labels[i] + values[i] + "\n");

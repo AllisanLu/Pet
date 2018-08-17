@@ -13,8 +13,8 @@ import javax.swing.JLabel;
 public class Window extends JLabel implements WindowListener {
 
 
-    public static void growTama(int petState, Tama jerry) {
-        switch(petState){
+    public static void setTamaPicture(Tama jerry) {
+        switch(jerry.getPetState()){
             case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/Egg.png")));
                     egg.setBounds(100,100,100,100);
                     jerry.setTom(egg);

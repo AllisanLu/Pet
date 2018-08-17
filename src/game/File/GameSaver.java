@@ -3,6 +3,8 @@ package game.File;
 import game.File.GameLoader;
 import game.Tama;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileWriter;
 import java.io.IOException;
 

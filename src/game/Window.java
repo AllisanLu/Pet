@@ -13,8 +13,8 @@ import javax.swing.JLabel;
 
 public class Window extends JLabel implements WindowListener{
 
-    public static void setTamaPicture(Tama jerry) {
-        switch(jerry.getPetState()){
+    public static void growTama(int petState, Tama jerry) {
+        switch(petState){
             case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/Egg.png")));
                     egg.setBounds(100,100,100,100);
                     jerry.setTom(egg);
@@ -48,6 +48,8 @@ public class Window extends JLabel implements WindowListener{
         JLabel empty = new JLabel("");
         show.add(empty);
         show.setVisible(true);
+
+        Window win = new Window(show);
     }
 
     private static JLabel createPets(JFrame show) {
@@ -90,40 +92,44 @@ public class Window extends JLabel implements WindowListener{
         show.repaint();
     }
 
-    @Override
-    public void windowOpened(WindowEvent e) {
-        System.out.println("Loading!");
+    public Window(JFrame show) {
+        show.addWindowListener(this);
     }
 
-    @Override
-    public void windowClosing(WindowEvent e) {
-        new GameSaver(Driver.getTama());
-        System.out.println("Saved!");
-    }
+        @Override
+        public void windowOpened(WindowEvent e) {
+            System.out.println("Loading!");
+        }
 
-    @Override
-    public void windowClosed(WindowEvent e) {
+        @Override
+        public void windowClosing(WindowEvent e) {
+            new GameSaver(Driver.getTama());
+            System.out.println("Saved!");
+        }
 
-    }
+        @Override
+        public void windowClosed(WindowEvent e) {
 
-    @Override
-    public void windowIconified(WindowEvent e) {
+        }
 
-    }
+        @Override
+        public void windowIconified(WindowEvent e) {
 
-    @Override
-    public void windowDeiconified(WindowEvent e) {
+        }
 
-    }
+        @Override
+        public void windowDeiconified(WindowEvent e) {
 
-    @Override
-    public void windowActivated(WindowEvent e) {
+        }
 
-    }
+        @Override
+        public void windowActivated(WindowEvent e) {
 
-    @Override
-    public void windowDeactivated(WindowEvent e) {
+        }
 
-    }
+        @Override
+        public void windowDeactivated(WindowEvent e) {
+
+        }
 
 }

@@ -1,6 +1,7 @@
 package game;
 
 import javax.swing.JLabel;
+import javax.swing.*;
 
 public class Tama {
     private int food, health, petState;
@@ -50,13 +51,13 @@ public class Tama {
     public void setPetState(int petState) {
         this.petState = petState;
     }
-
+    
     public void incrementPetState(int petState) {
         this.petState += petState;
     }
 
     public void grow() {
 	    this.petState += 1;
-        Window.setTamaPicture(this);
+        Window.growTama(this.petState, this);
     }
 }

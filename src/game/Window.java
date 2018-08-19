@@ -14,26 +14,27 @@ public class Window extends JLabel {
     }
 
     public static void setTamaPicture(Tama jerry) {
+        System.out.println(jerry.getPetState());
         switch(jerry.getPetState()) {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");
                 break;
-            case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/Egg.png")));
-                    egg.setBounds(100,100,100,100);
+            case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/EggMoving.gif")));
+                    egg.setBounds((show.getWidth()/2)-12, 170, 22, 27);
                     jerry.setTom(egg);
 
-                    //TODO: remove the current whatever the pet picture is: is it pet, Jerry or tom IDK
-                    //TODO: add the new jerry? to show
+                    show.add(jerry.getTom());
 
                     reDrawWindow(show);
                     System.out.println("EGG!");
                 break;
-            case 1: JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
-                    lizard.setBounds(100,100,100,100);
+            case 1: show.remove(jerry.getTom());
+
+                    JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
+                    lizard.setBounds((show.getWidth()/2)-50, 130, 100, 100);
                     jerry.setTom(lizard);
 
-                //TODO: remove the current whatever the pet picture is: is it pet, Jerry or tom IDK
-                //TODO: add the new jerry? to show
+                    show.add(jerry.getTom());
 
                     reDrawWindow(show);
                     System.out.println("LIZARD");
@@ -53,7 +54,8 @@ public class Window extends JLabel {
         show.pack();
         show.setResizable(false);
 
-        jerry.setTom(createPets());
+        setTamaPicture(jerry);
+        //jerry.setTom(createPets());
 
         createFeedButton();
         createCleanButton();
@@ -66,13 +68,6 @@ public class Window extends JLabel {
         Window win = new Window();
     }
 
-    private static JLabel createPets() {
-        JLabel pet = new JLabel(new ImageIcon(Tama.class.getResource("Images/EggMoving.gif")));
-        pet.setBounds((show.getWidth()/2)-12, 170, 22, 27);
-        show.add(pet);
-
-        return pet;
-    }
     private static void createSettings() {
         show.setContentPane(new JLabel(new ImageIcon(Tama.class.getResource("Images/Border.png"))));
 

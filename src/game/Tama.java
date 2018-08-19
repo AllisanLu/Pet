@@ -12,9 +12,9 @@ public class Tama {
     private double[] expPerFood = { 10, 5, 1.5, .9};
 
 	public Tama() {
-	    food = 0;
-	    health = 0;
-	    petState = 0;
+	    this.food = 0;
+	    this.health = 0;
+	    this.petState = 0;
 		Window.showPet(this);
 	}
 
@@ -34,9 +34,7 @@ public class Tama {
 	    this.food = food;
     }
 
-    public JLabel getTom() {
-        return tom;
-    }
+    public JLabel getTom() { return tom; }
 
     public void setTom(JLabel tom) {
         this.tom = tom;
@@ -51,7 +49,7 @@ public class Tama {
     }
 
     public int getPetState() {
-        return petState;
+        return this.petState;
     }
 
     public void setPetState(int petState) {

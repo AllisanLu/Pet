@@ -1,14 +1,13 @@
 package game.buttons;
 
 import game.Driver;
-
+import game.Tama;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class FeedButton implements ActionListener {
 
-    private int[] levelUp = { 10, 20, 30, 40, };
     private int levelCounter = 0;
 
     public FeedButton(JButton food) {
@@ -16,10 +15,11 @@ public class FeedButton implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("BABY HAS BEEN FED");
+        Tama jerry = Driver.getTama();
 
-        Driver.getTama().incrementFood(1);
-        if(Driver.getTama().getFood() >= levelUp[levelCounter]) {
+        jerry.setExp(jerry.getExp() + jerry.getExpPerFood()[levelCounter]);
+
+        if(jerry.getExp() >= 100) {
             levelCounter++;
             Driver.getTama().grow();
             System.out.println("BABY HAS GROWN UP!");

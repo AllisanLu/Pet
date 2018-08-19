@@ -22,10 +22,22 @@ public class Window extends JLabel {
             case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/Egg.png")));
                     egg.setBounds(100,100,100,100);
                     jerry.setTom(egg);
+
+                    //TODO: remove the current whatever the pet picture is: is it pet, Jerry or tom IDK
+                    //TODO: add the new jerry? to show
+
+                    reDrawWindow(show);
+                    System.out.println("EGG!");
                 break;
             case 1: JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
                     lizard.setBounds(100,100,100,100);
                     jerry.setTom(lizard);
+
+                //TODO: remove the current whatever the pet picture is: is it pet, Jerry or tom IDK
+                //TODO: add the new jerry? to show
+
+                    reDrawWindow(show);
+                    System.out.println("LIZARD");
                 break;
         }
     }

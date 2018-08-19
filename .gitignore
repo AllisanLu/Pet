@@ -4,3 +4,4 @@ src/game/Window.java
 *.java
 src/game/Window.java
 src/game/Images/poo.png
+*.xml

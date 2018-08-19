@@ -1,6 +1,5 @@
 package game;
 
-<<<<<<< HEAD
 import game.File.*;
 import game.buttons.*;
 import javax.swing.*;
@@ -20,23 +19,6 @@ public class Window extends JLabel {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");
                 break;
-=======
-import game.File.GameSaver;
-import game.buttons.FeedButton;
-import game.buttons.CleanButton;
-import game.buttons.ResetButton;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import javax.swing.JLabel;
-
-public class Window extends JLabel implements WindowListener{
-
-    public static void growTama(int petState, Tama jerry) {
-        switch(petState){
->>>>>>> 451def0219ad3435139753a1d13dd681a7509f03
             case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/Egg.png")));
                     egg.setBounds(100,100,100,100);
                     jerry.setTom(egg);
@@ -69,11 +51,8 @@ public class Window extends JLabel implements WindowListener{
         JLabel empty = new JLabel("");
         show.add(empty);
         show.setVisible(true);
-<<<<<<< HEAD
-=======
 
-        Window win = new Window(show);
->>>>>>> 451def0219ad3435139753a1d13dd681a7509f03
+        Window win = new Window();
     }
 
     private static JLabel createPets() {
@@ -115,49 +94,4 @@ public class Window extends JLabel implements WindowListener{
         show.revalidate();
         show.repaint();
     }
-
-<<<<<<< HEAD
-
-=======
-    public Window(JFrame show) {
-        show.addWindowListener(this);
-    }
-
-        @Override
-        public void windowOpened(WindowEvent e) {
-            System.out.println("Loading!");
-        }
-
-        @Override
-        public void windowClosing(WindowEvent e) {
-            new GameSaver(Driver.getTama());
-            System.out.println("Saved!");
-        }
-
-        @Override
-        public void windowClosed(WindowEvent e) {
-
-        }
-
-        @Override
-        public void windowIconified(WindowEvent e) {
-
-        }
-
-        @Override
-        public void windowDeiconified(WindowEvent e) {
-
-        }
-
-        @Override
-        public void windowActivated(WindowEvent e) {
-
-        }
-
-        @Override
-        public void windowDeactivated(WindowEvent e) {
-
-        }
-
->>>>>>> 451def0219ad3435139753a1d13dd681a7509f03
 }

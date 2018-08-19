@@ -13,7 +13,7 @@ public class Driver {
         try {
             GameLoader.makeFile();
         }catch (Exception IoException){
-            System.out.println("error in Game Laoder");
+            System.out.println("error in Game Loader");
         }
     }
 

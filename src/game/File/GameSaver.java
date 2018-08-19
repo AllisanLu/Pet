@@ -1,9 +1,6 @@
 package game.File;
 
 import game.Tama;
-
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.FileWriter;
 
 public class GameSaver {
@@ -14,13 +11,14 @@ public class GameSaver {
 
         String[] labels = {"food: ", "health: ", "pet state: "};
         int[] values = {jerry.getFood(), jerry.getHealth(), jerry.getPetState()};
-
+        System.out.println("this ran");
         try {
              pen = new FileWriter(GameLoader.getFile());
-             //System.out.println("Got file!");
+             System.out.println("Got file!");
 
             for (int i = 0; i < values.length; i++) {
-                pen.write(labels[i] + values[i] + "\n");
+                System.out.println("I wrote: " + labels[i] + values[i] );
+                pen.write(labels[i] + values[i]);
             }
         } catch(Exception IOException) {
             System.out.println("File Writer messed up. \n Could not save game.");

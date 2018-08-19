@@ -1,7 +1,6 @@
 package game.File;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class GameLoader {
@@ -14,6 +13,7 @@ public class GameLoader {
 
 
     public static void makeFile() {
+        System.out.println("this ran");
         file = new File("bin/saveData.txt");
         try {
             file.createNewFile();

@@ -18,7 +18,7 @@ public class FeedButton implements ActionListener {
         Tama jerry = Driver.getTama();
 
         jerry.setExp(jerry.getExp() + jerry.getExpPerFood()[levelCounter]);
-
+        jerry.setFood(jerry.getFood() + 1);
         if(jerry.getExp() >= 100) {
             levelCounter++;
             Driver.getTama().grow();

@@ -57,7 +57,7 @@ public class Tama {
     public void setPetState(int petState) {
         this.petState = petState;
     }
-<<<<<<< HEAD
+
 
     public double getExp() {
         return exp;
@@ -65,21 +65,17 @@ public class Tama {
 
     public void setExp(double exp) {
         this.exp = exp;
-=======
-    
+    }
     public void incrementPetState(int petState) {
         this.petState += petState;
->>>>>>> 451def0219ad3435139753a1d13dd681a7509f03
+
     }
 
     public void grow() {
 	    this.petState += 1;
-<<<<<<< HEAD
+
 	    this.exp = 0;
         Window.setTamaPicture(this);
-=======
-        Window.growTama(this.petState, this);
->>>>>>> 451def0219ad3435139753a1d13dd681a7509f03
     }
 
     public double[] getExpPerFood() {

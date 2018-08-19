@@ -1,6 +1,5 @@
 package game;
 
-import game.File.*;
 import game.buttons.*;
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +7,7 @@ import javax.swing.JLabel;
 
 public class Window extends JLabel {
 
-    private static JFrame show = new JFrame("Tamagachi");;
+    private static JFrame show = new JFrame("Tamagachi");
 
     public static JFrame getShow() {
         return show;

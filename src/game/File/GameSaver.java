@@ -1,6 +1,7 @@
-package game.File;
+package game.file;
 
 import game.Tama;
+
 import java.io.FileWriter;
 
 public class GameSaver {
@@ -17,12 +18,11 @@ public class GameSaver {
              System.out.println("Got file!");
 
             for (int i = 0; i < values.length; i++) {
-                System.out.println("I wrote: " + labels[i] + values[i] );
-                pen.write(labels[i] + values[i]);
+                pen.write(labels[i] + values[i] + "\n");
             }
+            pen.close();
         } catch(Exception IOException) {
-            System.out.println("File Writer messed up. \n Could not save game.");
+            System.out.println("file Writer messed up. \n Could not save game.");
         }
-
     }
 }

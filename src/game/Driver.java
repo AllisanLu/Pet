@@ -1,7 +1,6 @@
 package game;
-import game.File.GameLoader;
-import game.File.GameSaver;
-import game.File.WindowActivation;
+import game.file.GameLoader;
+import game.file.WindowActivation;
 
 public class Driver {
 

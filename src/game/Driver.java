@@ -1,14 +1,14 @@
 package game;
 import game.File.GameLoader;
 import game.File.GameSaver;
+import game.File.WindowActivation;
 
 public class Driver {
 
-    public static Tama jerry = new Tama();
+    private static Tama jerry = new Tama();
 
     public static void main(String[] args) {
-        GameLoader.makeFile();
-        GameLoader.readFile();
+        WindowActivation test = new WindowActivation(Window.getShow());
 
         try {
             GameLoader.makeFile();

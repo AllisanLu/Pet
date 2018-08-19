@@ -1,10 +1,8 @@
 package game.File;
 
-import game.File.GameLoader;
 import game.Tama;
 
 import java.io.FileWriter;
-import java.io.IOException;
 
 public class GameSaver {
 

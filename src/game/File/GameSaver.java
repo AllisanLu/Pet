@@ -2,6 +2,8 @@ package game.File;
 
 import game.Tama;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileWriter;
 
 public class GameSaver {
@@ -15,6 +17,7 @@ public class GameSaver {
 
         try {
              pen = new FileWriter(GameLoader.getFile());
+             //System.out.println("Got file!");
 
             for (int i = 0; i < values.length; i++) {
                 pen.write(labels[i] + values[i] + "\n");

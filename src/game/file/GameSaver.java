@@ -8,10 +8,10 @@ public class GameSaver {
 
     private FileWriter pen;
 
-    public GameSaver(Tama jerry) {
+    public GameSaver(Tama currentTama) {
 
         String[] labels = {"food: ", "health: ", "pet state: "};
-        int[] values = {jerry.getFood(), jerry.getHealth(), jerry.getPetState()};
+        int[] values = {currentTama.getFood(), currentTama.getHealth(), currentTama.getPetState()};
         System.out.println("this ran");
         try {
              pen = new FileWriter(GameLoader.getFile());

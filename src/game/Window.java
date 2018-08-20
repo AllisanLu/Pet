@@ -13,36 +13,37 @@ public class Window extends JLabel {
         return show;
     }
 
-    public static void setTamaPicture(Tama jerry) {
-        System.out.println(jerry.getPetState());
-        switch(jerry.getPetState()) {
+    public static void setTamaPicture(Tama currentTama) {
+        System.out.println(currentTama.getPetState());
+        switch(currentTama.getPetState()) {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");
                 break;
-            case 0: JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/EggMoving.gif")));
-                    egg.setBounds((show.getWidth()/2)-12, 170, 22, 27);
-                    jerry.setTom(egg);
+            case 0:
+                JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/EggMoving.gif")));
+                egg.setBounds((show.getWidth() / 2) - 12, 170, 22, 27);
+                currentTama.setTom(egg);
 
-                    show.add(jerry.getTom());
+                show.add(currentTama.getTom());
 
-                    reDrawWindow(show);
-                    System.out.println("EGG!");
+                System.out.println("EGG!");
                 break;
-            case 1: show.remove(jerry.getTom());
+            case 1:
+                show.remove(currentTama.getTom());
 
-                    JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
-                    lizard.setBounds((show.getWidth()/2)-50, 130, 100, 100);
-                    jerry.setTom(lizard);
+                JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
+                lizard.setBounds((show.getWidth() / 2) - 50, 130, 100, 100);
+                currentTama.setTom(lizard);
 
-                    show.add(jerry.getTom());
+                show.add(currentTama.getTom());
 
-                    reDrawWindow(show);
-                    System.out.println("LIZARD");
+                System.out.println("LIZARD");
                 break;
         }
+        reDrawWindow();
     }
 
-    public static void showPet(Tama jerry) {
+    public static void showPet(Tama currentTama) {
         show.setLayout(null);
         ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));
 
@@ -54,8 +55,7 @@ public class Window extends JLabel {
         show.pack();
         show.setResizable(false);
 
-        setTamaPicture(jerry);
-        //jerry.setTom(createPets());
+        setTamaPicture(currentTama);
 
         createFeedButton();
         createCleanButton();
@@ -64,8 +64,6 @@ public class Window extends JLabel {
         JLabel empty = new JLabel("");
         show.add(empty);
         show.setVisible(true);
-
-        Window win = new Window();
     }
 
     private static void createSettings() {
@@ -96,7 +94,7 @@ public class Window extends JLabel {
 
         ResetButton resetButton = new ResetButton(reset);
     }
-    private static void reDrawWindow(JFrame show) {
+    private static void reDrawWindow() {
         show.revalidate();
         show.repaint();
     }

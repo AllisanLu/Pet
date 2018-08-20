@@ -29,12 +29,15 @@ public class GameLoader {
             System.out.println("Scanner could not find file: " + file);
             System.out.println("Setting default settings.");
         }
+
+        //TODO: Make readFile read two Strings than the rest numbers(doubles)
         String gameState = "";
-        while (reader.hasNext()) {
-            gameState += reader.nextLine();
+          while (reader.hasNext()) {
+            gameState += reader.nextDouble();
         }
 
         for (String strs : gameState.split(" ")) {
+
         }
     }
 }

@@ -10,11 +10,13 @@ public class Tama {
     private JLabel tom;
     private double exp;
     private double[] expPerFood = { 10, 5, 1.5, .9};
+    private double lastTimeFed;
 
 	public Tama() {
 	    this.food = 0;
 	    this.health = 0;
 	    this.petState = 0;
+	    this.lastTimeFed = System.currentTimeMillis();
 		Window.showPet(this);
 	}
 
@@ -56,6 +58,13 @@ public class Tama {
         this.petState = petState;
     }
 
+    public void setLastTimeFed(double lastTimeFed) {
+        this.lastTimeFed = lastTimeFed;
+    }
+
+    public double getLastTimeFed() {
+	    return this.lastTimeFed;
+    }
 
     public double getExp() {
         return exp;

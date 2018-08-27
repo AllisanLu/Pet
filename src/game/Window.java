@@ -20,7 +20,7 @@ public class Window extends JLabel {
                 System.out.println("Value in Windows setTamaPicture was not correct.");
                 break;
             case 0:
-                JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/EggMoving.gif")));
+                JLabel egg = new JLabel(new ImageIcon(Window.class.getResource("Images/" + currentTama.getFolderName() + "/First.gif")));
                 egg.setBounds((show.getWidth() / 2) - 12, 170, 22, 27);
                 currentTama.setTom(egg);
 
@@ -31,7 +31,7 @@ public class Window extends JLabel {
             case 1:
                 show.remove(currentTama.getTom());
 
-                JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/lizard1.gif")));
+                JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/" + currentTama.getFolderName() + "/Second.gif")));
                 lizard.setBounds((show.getWidth() / 2) - 50, 130, 100, 100);
                 currentTama.setTom(lizard);
 

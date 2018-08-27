@@ -1,7 +1,6 @@
 package game;
 
 import javax.swing.JLabel;
-import javax.swing.*;
 
 public class Tama {
 
@@ -11,13 +10,22 @@ public class Tama {
     private double exp;
     private double[] expPerFood = { 10, 5, 1.5, .9};
     private double lastTimeFed;
+    private static int currentTamaInstance;
+    private String folderName;
 
-	public Tama() {
+    public Tama(){
+        this.food = 0;
+        this.health = 0;
+        this.lastTimeFed = System.currentTimeMillis();
+    }
+
+    public Tama(String name, String folderName) {
 	    this.food = 0;
+	    this.name = name;
 	    this.health = 0;
 	    this.petState = 0;
+	    this.folderName = folderName;
 	    this.lastTimeFed = System.currentTimeMillis();
-		Window.showPet(this);
 	}
 
     public String getName() {
@@ -70,12 +78,16 @@ public class Tama {
         return exp;
     }
 
+    public static int getCurrentTamaInstance() {
+        return currentTamaInstance;
+    }
+
+    public static void setCurrentTamaInstance(int currentTamaInstance) {
+        Tama.currentTamaInstance = currentTamaInstance;
+    }
+
     public void setExp(double exp) {
         this.exp = exp;
-    }
-    public void incrementPetState(int petState) {
-        this.petState += petState;
-
     }
 
     public void grow() {
@@ -83,6 +95,14 @@ public class Tama {
 
 	    this.exp = 0;
         Window.setTamaPicture(this);
+    }
+
+    public String getFolderName() {
+        return folderName;
+    }
+
+    public void setFolderName(String folderName) {
+        this.folderName = folderName;
     }
 
     public double[] getExpPerFood() {

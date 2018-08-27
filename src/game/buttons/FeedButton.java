@@ -29,7 +29,7 @@ public class FeedButton implements ActionListener {
             currentTama.setFood(currentTama.getFood() + 1);
             if(currentTama.getExp() >= 100) {
                 levelCounter++;
-                Driver.getTama().grow();
+                currentTama.grow();
                 System.out.println("BABY HAS GROWN UP!");
             }
         }

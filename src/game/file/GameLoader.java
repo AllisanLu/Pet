@@ -1,5 +1,7 @@
 package game.file;
 
+import game.Driver;
+
 import java.io.File;
 import java.util.Scanner;
 import java.util.regex.*;
@@ -42,15 +44,18 @@ public class GameLoader {
             if(strs.matches("\\d")){
                 System.out.println("Here's a number");
                 int number = Integer.parseInt(strs);
-                switch(number) {
+                switch(currentCount) {
                     default:
-                        System.out.println("That didn't work");
+                        System.out.println("That didn't work:" + number + "counter at " + currentCount);
                     case 0:
-                        currentTama.setFood();
-                        currentCount++;
+                        Driver.getTama().setFood(number);
                     case 1:
-                        currentTama
+                        Driver.getTama().setHealth(number);
+                    case 2:
+                        Driver.getTama().setPetState(number);
+
                 }
+                currentCount++;
             }
         }
     }

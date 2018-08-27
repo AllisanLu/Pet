@@ -2,6 +2,7 @@ package game.file;
 
 import java.io.File;
 import java.util.Scanner;
+import java.util.regex.*;
 
 public class GameLoader {
     private static File file;
@@ -33,11 +34,24 @@ public class GameLoader {
         //TODO: Make readFile read two Strings than the rest numbers(doubles)
         String gameState = "";
           while (reader.hasNext()) {
-            gameState += reader.nextDouble();
+            gameState += reader.nextLine();
         }
 
+        int currentCount = 0;
         for (String strs : gameState.split(" ")) {
-
+            if(strs.matches("\\d")){
+                System.out.println("Here's a number");
+                int number = Integer.parseInt(strs);
+                switch(number) {
+                    default:
+                        System.out.println("That didn't work");
+                    case 0:
+                        currentTama.setFood();
+                        currentCount++;
+                    case 1:
+                        currentTama
+                }
+            }
         }
     }
 }

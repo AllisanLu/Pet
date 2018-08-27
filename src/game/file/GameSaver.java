@@ -10,7 +10,7 @@ public class GameSaver {
 
     public GameSaver(Tama currentTama) {
 
-        String[] labels = {"food: ", "health: ", "pet state: "};
+        String[] labels = {"food: ", " health: ", " petState: "};
         int[] values = {currentTama.getFood(), currentTama.getHealth(), currentTama.getPetState()};
         System.out.println("this ran");
         try {

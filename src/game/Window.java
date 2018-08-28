@@ -4,6 +4,8 @@ import game.buttons.*;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.JLabel;
+import javax.swing.event.PopupMenuEvent;
+import javax.swing.event.PopupMenuListener;
 
 public class Window extends JLabel {
 
@@ -14,7 +16,6 @@ public class Window extends JLabel {
     }
 
     public static void setTamaPicture(Tama currentTama) {
-        System.out.println(currentTama.getPetState());
         switch(currentTama.getPetState()) {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");
@@ -60,10 +61,24 @@ public class Window extends JLabel {
         createFeedButton();
         createCleanButton();
         createResetButton();
-
         JLabel empty = new JLabel("");
         show.add(empty);
         show.setVisible(true);
+
+        JPopupMenu pop = new JPopupMenu();
+        pop.addPopupMenuListener(new TamaSwitcher());
+
+        JMenuItem jerry = new JMenuItem("Jerry");
+        JMenuItem terry = new JMenuItem("Terry");
+        JPanel panel = new JPanel();
+        panel.setComponentPopupMenu(pop);
+        panel.setSize(500,500);
+        panel.setOpaque(false);
+        pop.add(jerry);
+        pop.addSeparator();
+        pop.add(terry);
+        show.add(panel);
+        reDrawWindow();
     }
 
     private static void createSettings() {

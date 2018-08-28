@@ -19,6 +19,10 @@ public class Driver {
         }
     }
 
+    public static Tama[] getTamas() {
+        return Tamas;
+    }
+
     public static Tama getTama() {
         return Tamas[Tama.getCurrentTamaInstance()];
     }

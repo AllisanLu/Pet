@@ -5,3 +5,5 @@ src/game/Window.java
 src/game/Window.java
 src/game/Images/poo.png
 *.xml
+.idea/workspace.xml
+.idea/workspace.xml

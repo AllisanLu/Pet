@@ -20,7 +20,7 @@ public class FeedButton implements ActionListener {
         Tama currentTama = Driver.getTama();
 
         //If Tama has been fed in the last 5 minutes prints I'm to full
-        if(currentTime - currentTama.getLastTimeFed() < 300000) {
+        if(currentTime - currentTama.getLastTimeFed() < 30000) {
             System.out.println("I'm to full");
         }
         else {

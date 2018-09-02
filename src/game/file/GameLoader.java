@@ -14,7 +14,10 @@ public class GameLoader {
         return file;
     }
 
-
+    /**
+     * If the method cannot find a txt File in the correct spot and name, it creates one to save
+     * future data on the Tamas into.
+     */
     public static void makeFile() {
         System.out.println("this ran");
         file = new File("bin/saveData.txt");
@@ -53,7 +56,6 @@ public class GameLoader {
                         Driver.getTama().setHealth(number);
                     case 2:
                         Driver.getTama().setPetState(number);
-
                 }
                 currentCount++;
             }

@@ -10,8 +10,8 @@ public class GameSaver {
 
     public GameSaver(Tama currentTama) {
 
-        String[] labels = {"food: ", " health: ", " petState: "};
-        int[] values = {currentTama.getFood(), currentTama.getHealth(), currentTama.getPetState()};
+        String[] labels = {"food: ", " health: ", " petState: ", " poop: "};
+        int[] values = {currentTama.getFood(), currentTama.getHealth(), currentTama.getPetState(), currentTama.getPoop()};
         System.out.println("this ran");
         try {
              pen = new FileWriter(GameLoader.getFile());

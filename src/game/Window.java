@@ -4,6 +4,7 @@ import game.buttons.*;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.JLabel;
+import java.util.ArrayList;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
@@ -11,7 +12,8 @@ public class Window extends JLabel {
 
     private static JFrame show = new JFrame("Tamagachi");
 
-    private static JLabel[] poops = new JLabel[10];
+    //private static JLabel[] poops = new JLabel[10];
+    private static ArrayList<JLabel> poops = new ArrayList<JLabel>();
     private static int poopCounter;
     public static JFrame getShow() {
         return show;
@@ -114,25 +116,33 @@ public class Window extends JLabel {
     }
 
     public static void addPoop() {
+        Tama currentTama = Driver.getTama();
         if(poopCounter >= 10) {
             System.out.println("Pet Died");
         }
         else {
             JLabel poop = new JLabel(new ImageIcon(Window.class.getResource("Images/poo.png")));
             poop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) (Math.random() * 80));
-            poops[poopCounter] = poop;
+            poops.add(poop);
             poopCounter++;
+            currentTama.setPoop(poopCounter);
             show.add(poop);
             reDrawWindow();
         }
     }
 
     public static void removePoop() {
-        for (int i = 0; i < poops.length; i++) {
-            show.remove(poops[i]);
+        Tama currentTama = Driver.getTama();
+        if(poopCounter == 0){
+            System.out.println("why???");
+        }else {
+            for (int i = 0; i < poops.size(); i++) {
+                show.remove(poops.get(i));
+                reDrawWindow();
+            }
+            poopCounter = 0;
+            currentTama.setPoop(poopCounter); // so like here it doesnt set it back to zero :o
         }
-        reDrawWindow();
-        poopCounter = 0;
     }
 
 

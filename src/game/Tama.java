@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 public class Tama {
 
     private String name;
-    private int food, health, petState;
+    private int food, health, petState, poop;
     private JLabel tom;
     private double exp;
     private double[] expPerFood = { 10, 5, 1.5, .9};
@@ -20,6 +20,7 @@ public class Tama {
     public Tama(){
         this.food = 0;
         this.health = 0;
+        this.poop = 0;
         this.lastTimeFed = System.currentTimeMillis();
     }
 
@@ -51,6 +52,10 @@ public class Tama {
     public void setFood(int food) {
 	    this.food = food;
     }
+
+    public int getPoop(){ return poop; }
+
+    public void setPoop(int poop) { this.poop = poop;}
 
     public JLabel getTom() { return tom; }
 

@@ -109,6 +109,14 @@ public class Window extends JLabel {
 
         ResetButton resetButton = new ResetButton(reset);
     }
+
+    public static void addPoop() {
+        JLabel poop = new JLabel(new ImageIcon(Window.class.getResource("Images/poo.png")));
+        poop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) ( Math.random() * 80));
+        show.add(poop);
+        reDrawWindow();
+    }
+
     private static void reDrawWindow() {
         show.revalidate();
         show.repaint();

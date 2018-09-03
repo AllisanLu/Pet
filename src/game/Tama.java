@@ -10,15 +10,23 @@ public class Tama {
     private double exp;
     private double[] expPerFood = { 10, 5, 1.5, .9};
     private double lastTimeFed;
-    private static int currentTamaInstance;
+    private static int currentInstance;
     private String folderName;
 
+    /**
+     * Sets minimum basic instance variables in Tama. Should
+     * only be used if there is an error retrieving data from the txt files.
+     */
     public Tama(){
         this.food = 0;
         this.health = 0;
         this.lastTimeFed = System.currentTimeMillis();
     }
 
+    /**
+     * @param name Sets the name for Tama that user created.
+     * @param folderName The folder where the data for the Tamas are saved.
+     */
     public Tama(String name, String folderName) {
 	    this.food = 0;
 	    this.name = name;
@@ -78,18 +86,21 @@ public class Tama {
         return exp;
     }
 
-    public static int getCurrentTamaInstance() {
-        return currentTamaInstance;
+    public static int getInstance() {
+        return currentInstance;
     }
 
-    public static void setCurrentTamaInstance(int currentTamaInstance) {
-        Tama.currentTamaInstance = currentTamaInstance;
+    public static void setInstance(int currentTamaInstance) {
+        Tama.currentInstance = currentTamaInstance;
     }
 
     public void setExp(double exp) {
         this.exp = exp;
     }
 
+    /**
+     * Increases the petState and changes the picture to the next level of the Tama.
+     */
     public void grow() {
 	    this.petState += 1;
 
@@ -113,9 +124,31 @@ public class Tama {
         this.expPerFood = expPerFood;
     }
 
+    /**
+     * Returns user set instance variables and instance variables that change through the
+     * running of the application. @return String of those variables.
+     */
     public String toString() {
-	    return "Food: " + food + "\n" +
-                "Health" + health + "\n" +
-                "petState" + petState + "\n";
+	    return "Name: " + name + "\n" +
+                "TamaInstance: " + currentInstance + "\n" +
+                "Food: " + food + "\n" +
+                "Health: " + health + "\n" +
+                "PetState: " + petState + "\n" +
+                "Exp: " + exp + "\n";
+
+
     }
+
+    /**
+     * Resets all the feature about the Tama except for the name and foldername.
+     */
+    public void reset() {
+        this.health = 0;
+        this.petState = 0;
+        this.exp = 0;
+        this.food = 0;
+        Window.setTamaPicture(this);
+    }
+
+
 }

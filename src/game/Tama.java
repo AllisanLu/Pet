@@ -149,6 +149,4 @@ public class Tama {
         this.food = 0;
         Window.setTamaPicture(this);
     }
-
-
 }

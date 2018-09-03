@@ -69,7 +69,7 @@ public class Window extends JLabel {
         show.setVisible(true);
 
         JPopupMenu pop = new JPopupMenu();
-        pop.addPopupMenuListener(new TamaSwitcher());
+        //pop.addPopupMenuListener(new TamaSwitcher());
 
         JMenuItem jerry = new JMenuItem("Jerry");
         JMenuItem terry = new JMenuItem("Terry");
@@ -114,14 +114,6 @@ public class Window extends JLabel {
     }
 
     public static void addPoop() {
-<<<<<<< HEAD
-        JLabel poop = new JLabel(new ImageIcon(Window.class.getResource("Images/poo.png")));
-        poop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) ( Math.random() * 80));
-        show.add(poop);
-        reDrawWindow();
-    }
-
-=======
         if(poopCounter >= 10) {
             System.out.println("Pet Died");
         }
@@ -142,8 +134,8 @@ public class Window extends JLabel {
         reDrawWindow();
         poopCounter = 0;
     }
-    
->>>>>>> b8a76296efdc213e470713049458187a82ef1b8a
+
+
     private static void reDrawWindow() {
         show.repaint();
     }

@@ -11,6 +11,8 @@ public class Window extends JLabel {
 
     private static JFrame show = new JFrame("Tamagachi");
 
+    private static JLabel[] poops = new JLabel[10];
+    private static int poopCounter;
     public static JFrame getShow() {
         return show;
     }
@@ -45,6 +47,7 @@ public class Window extends JLabel {
     }
 
     public static void showPet(Tama currentTama) {
+        poopCounter = 0;
         show.setLayout(null);
         ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));
 
@@ -111,14 +114,37 @@ public class Window extends JLabel {
     }
 
     public static void addPoop() {
+<<<<<<< HEAD
         JLabel poop = new JLabel(new ImageIcon(Window.class.getResource("Images/poo.png")));
         poop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) ( Math.random() * 80));
         show.add(poop);
         reDrawWindow();
     }
 
+=======
+        if(poopCounter >= 10) {
+            System.out.println("Pet Died");
+        }
+        else {
+            JLabel poop = new JLabel(new ImageIcon(Window.class.getResource("Images/poo.png")));
+            poop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) (Math.random() * 80));
+            poops[poopCounter] = poop;
+            poopCounter++;
+            show.add(poop);
+            reDrawWindow();
+        }
+    }
+
+    public static void removePoop() {
+        for (int i = 0; i < poops.length; i++) {
+            show.remove(poops[i]);
+        }
+        reDrawWindow();
+        poopCounter = 0;
+    }
+    
+>>>>>>> b8a76296efdc213e470713049458187a82ef1b8a
     private static void reDrawWindow() {
-        show.revalidate();
         show.repaint();
     }
 }

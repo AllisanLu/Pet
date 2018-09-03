@@ -2,6 +2,7 @@ package game.buttons;
 
 import game.Driver;
 import game.Tama;
+import game.Window;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,6 +17,7 @@ public class ResetButton implements ActionListener {
     public void actionPerformed(ActionEvent arg0) {
         Tama currentTama = Driver.getTama();
         currentTama.reset();
+        Window.removePoop();
         System.out.println("THE RESET HAS BEEN PRESSED UR BABY HAS BEEN REVIVED DONT FUK UP AGAIN");
     }
 }

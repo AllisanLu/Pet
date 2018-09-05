@@ -45,7 +45,7 @@ public class GameLoader {
         int currentCount = 0;
         for (String strs : gameState.split(" ")) {
             if(strs.matches("\\d")){
-                System.out.println("Here's a number");
+               // System.out.println("Here's a number");
                 int number = Integer.parseInt(strs);
                 switch(currentCount) {
                     default:
@@ -56,6 +56,9 @@ public class GameLoader {
                         Driver.getTama().setHealth(number);
                     case 2:
                         Driver.getTama().setPetState(number);
+                    case 3:
+                        Driver.getTama().setPoop(number);
+                        //System.out.println("Poop at loaer is " + Driver.getTama().getPoop());
                 }
                 currentCount++;
             }

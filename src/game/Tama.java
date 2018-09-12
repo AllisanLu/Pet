@@ -34,7 +34,7 @@ public class Tama {
 	    this.health = 0;
 	    this.petState = 0;
 	    this.folderName = folderName;
-	    this.lastTimeFed = System.currentTimeMillis();
+	    this.lastTimeFed = System.currentTimeMillis();      //TODO: gotta fix last time fed
 	}
 
     public String getName() {
@@ -89,6 +89,10 @@ public class Tama {
 
     public double getExp() {
         return exp;
+    }                               //TODO: fix exp
+
+    public void setExp(double exp) {
+        this.exp = exp;
     }
 
     public static int getInstance() {
@@ -97,10 +101,6 @@ public class Tama {
 
     public static void setInstance(int currentTamaInstance) {
         Tama.currentInstance = currentTamaInstance;
-    }
-
-    public void setExp(double exp) {
-        this.exp = exp;
     }
 
     /**

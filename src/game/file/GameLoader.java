@@ -38,6 +38,7 @@ public class GameLoader {
 
         //TODO: Make readFile read two Strings than the rest numbers(doubles)
         //TODO: SERIOUSLY CONSIDER SWITCHING TO LOOPS I THINK IT WILL BE MUCH EASIER
+        //TODO: shut up dududeeeeeeee it already works
         String gameState = "";
           while (reader.hasNext()) {
             gameState += reader.nextLine();

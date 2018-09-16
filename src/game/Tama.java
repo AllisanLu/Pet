@@ -8,7 +8,7 @@ public class Tama {
     private int food, health, petState, poop;
     private JLabel tom;
     private double exp;
-    private double[] expPerFood = { 10, 5, 1.5, .9};
+    private double expPerFood = 10;                     //TODO: was there a reason why expPerFood was an array if so, I can change it back
     private double lastTimeFed;
     private static int currentInstance;
     private String folderName;
@@ -87,17 +87,13 @@ public class Tama {
 	    return this.lastTimeFed;
     }
 
-    public double getExp() {
-        return exp;
-    }                               //TODO: fix exp
+    public double getExp(){ return exp; }                               //TODO: fix exp
 
     public void setExp(double exp) {
         this.exp = exp;
     }
 
-    public static int getInstance() {
-        return currentInstance;
-    }
+    public static int getInstance() { return currentInstance; }
 
     public static void setInstance(int currentTamaInstance) {
         Tama.currentInstance = currentTamaInstance;
@@ -121,11 +117,11 @@ public class Tama {
         this.folderName = folderName;
     }
 
-    public double[] getExpPerFood() {
+    public double getExpPerFood() {
         return expPerFood;
     }
 
-    public void setExpPerFood(double[] expPerFood) {
+    public void setExpPerFood(double expPerFood) {
         this.expPerFood = expPerFood;
     }
 

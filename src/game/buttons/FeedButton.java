@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 
 public class FeedButton implements ActionListener {
 
-    private int levelCounter = 0;
+    //private int levelCounter = 0; // TODO: what is thisss????
 
     public FeedButton(JButton food) {
         food.addActionListener(this);
@@ -27,10 +27,10 @@ public class FeedButton implements ActionListener {
         }
         else {
             currentTama.setLastTimeFed(System.currentTimeMillis());
-            currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood()[levelCounter]);
+            currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood()); //!! removed [level counter from getExpPerFood "array" ?
             currentTama.setFood(currentTama.getFood() + 1);
             if(currentTama.getExp() >= 100) {
-                levelCounter++;
+                //levelCounter++;
                 currentTama.grow();
                 System.out.println("BABY HAS GROWN UP!");
             }

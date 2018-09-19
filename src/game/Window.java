@@ -20,6 +20,11 @@ public class Window extends JLabel {
     }
 
     public static void setTamaPicture(Tama currentTama) {
+        try{
+            show.remove(currentTama.getTom());
+        }catch (Exception NullPointerException ){
+            System.out.println("no tama yet!");
+        }
         switch(currentTama.getPetState()) {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");
@@ -34,7 +39,7 @@ public class Window extends JLabel {
                 System.out.println("EGG!");
                 break;
             case 1:
-                show.remove(currentTama.getTom());
+                show.remove(currentTama.getTom()); // this isnt working
 
                 JLabel lizard = new JLabel(new ImageIcon(Window.class.getResource("Images/" + currentTama.getFolderName() + "/Second.gif")));
                 lizard.setBounds((show.getWidth() / 2) - 50, 130, 100, 100);

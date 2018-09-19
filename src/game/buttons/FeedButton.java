@@ -22,10 +22,10 @@ public class FeedButton implements ActionListener {
         Tama currentTama = Driver.getTama();
         //If Tama has been fed in the last 5 minutes prints I'm to full
         Window.addPoop();
-        if(currentTime - currentTama.getLastTimeFed() < 30000) {
-            System.out.println("I'm to full");
-        }
-        else {
+//        if(currentTime - currentTama.getLastTimeFed() < 30000) {
+//            System.out.println("I'm to full");
+//        }
+//        else {
             currentTama.setLastTimeFed(System.currentTimeMillis());
             currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood()); //!! removed [level counter from getExpPerFood "array" ?
             currentTama.setFood(currentTama.getFood() + 1);
@@ -34,6 +34,8 @@ public class FeedButton implements ActionListener {
                 currentTama.grow();
                 System.out.println("BABY HAS GROWN UP!");
             }
-        }
+//        }
     }
 }
+
+//TODO: add the timmer thinggy rn it's removed

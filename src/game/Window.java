@@ -36,7 +36,7 @@ public class Window extends JLabel {
 
                 show.add(currentTama.getTom());
 
-                System.out.println("EGG!");
+                //System.out.println("EGG!");
                 break;
             case 1:
                 show.remove(currentTama.getTom()); // this isnt working
@@ -47,7 +47,7 @@ public class Window extends JLabel {
 
                 show.add(currentTama.getTom());
 
-                System.out.println("LIZARD");
+                //System.out.println("LIZARD");
                 break;
         }
         reDrawWindow();
@@ -138,9 +138,7 @@ public class Window extends JLabel {
 
     public static void removePoop() {
         Tama currentTama = Driver.getTama();
-        if(poopCounter == 0){
-            System.out.println("why???");
-        }else {
+        if(!(poopCounter == 0)){
             for (int i = 0; i < poops.size(); i++) {
                 show.remove(poops.get(i));
                 reDrawWindow();

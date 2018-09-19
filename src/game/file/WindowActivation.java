@@ -27,7 +27,7 @@ public class WindowActivation implements WindowListener {
             //TODO: add correct amount of poop, why does it only add one right now? btw the Driver.get poop() thing works
         }
 
-        System.out.println("hi");
+        //System.out.println("hi");
     }
     //hey so I'ms leave this here o/ bob says hi
 

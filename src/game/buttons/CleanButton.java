@@ -1,5 +1,6 @@
 package game.buttons;
 
+import game.Driver;
 import game.Window;
 
 import javax.swing.*;
@@ -13,7 +14,7 @@ public class CleanButton implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("ALL THE POOP IS GONE");
         Window.removePoop();
+        System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + Driver.getTama().getPoop());
     }
 }

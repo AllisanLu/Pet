@@ -20,7 +20,11 @@ public class ResetButton implements ActionListener {
         currentTama.reset();
 
         Window.removePoop();
-        System.out.println("DERP");
+        System.out.println("DERP, pet has been reset! \n" +
+                            "food: " + Driver.getTama().getFood() + "\n" +
+                            "pet state: " + Driver.getTama().getPetState() + "\n" +
+                            "poop: " + Driver.getTama().getPoop() + "\n" +
+                            "Health: " + Driver.getTama().getHealth());
     }
 }
 

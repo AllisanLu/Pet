@@ -19,7 +19,7 @@ public class GameLoader {
      * future data on the Tamas into.
      */
     public static void makeFile() {
-        System.out.println("this ran");
+        //System.out.println("this ran");
         file = new File("bin/saveData.txt");
         try {
             file.createNewFile();

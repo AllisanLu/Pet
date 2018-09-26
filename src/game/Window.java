@@ -5,13 +5,15 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.JLabel;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
 public class Window extends JLabel {
 
     private static JFrame show = new JFrame("Tamagachi");
-
     //private static JLabel[] poops = new JLabel[10];
     private static ArrayList<JLabel> poops = new ArrayList<JLabel>();
     private static int poopCounter;
@@ -145,6 +147,24 @@ public class Window extends JLabel {
             }
             poopCounter = 0;
             currentTama.setPoop(poopCounter); // so like here it doesnt set it back to zero :o
+        }
+    }
+
+    public static void updateClock() {
+        Calendar cal;
+        JLabel time = new JLabel();
+        time.setBounds(125, 4, 50, 30);
+        show.add(time);
+        while(true) {
+            try {
+                cal = Calendar.getInstance();
+                time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
+                reDrawWindow();
+                System.out.println(time);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

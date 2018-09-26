@@ -1,6 +1,10 @@
 package game;
 import game.file.GameLoader;
 import game.file.WindowActivation;
+import sun.plugin2.os.windows.Windows;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class Driver {
 
@@ -17,6 +21,7 @@ public class Driver {
         }catch (Exception IoException){
             System.out.println("error in Game Loader");
         }
+        Window.updateClock();
     }
     
     public static Tama getTama() {

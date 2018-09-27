@@ -55,7 +55,7 @@ public class Window extends JLabel {
             case 2:
                 show.remove(currentTama.getTom()); // this isnt working
 
-                JLabel ghost = new JLabel(new ImageIcon(Window.class.getResource("Images/" + currentTama.getFolderName() + "/deadJerry.gif")));
+                JLabel ghost = new JLabel(new ImageIcon(Window.class.getResource("Images/" + currentTama.getFolderName() + "/dead.gif")));
                 ghost.setBounds((show.getWidth() / 2) - 50, 130, 100, 100);
                 currentTama.setTom(ghost);
 

@@ -7,8 +7,8 @@ public class Tama {
     private String name;
     private int food, health, petState, poop;
     private JLabel tom;
-    private double exp;
-    private double expPerFood = 10;                     //TODO: was there a reason why expPerFood was an array if so, I can change it back
+    private int exp;
+    private int expPerFood = 10;                     //TODO: was there a reason why expPerFood was an array if so, I can change it back
     private double lastTimeFed;
     private static int currentInstance;
     private String folderName;
@@ -33,6 +33,7 @@ public class Tama {
 	    this.name = name;
 	    this.health = 0;
 	    this.petState = 0;
+	    this.exp = 0;
 	    this.folderName = folderName;
 	    this.lastTimeFed = System.currentTimeMillis();      //TODO: gotta fix last time fed
 	}
@@ -87,9 +88,9 @@ public class Tama {
 	    return this.lastTimeFed;
     }
 
-    public double getExp(){ return exp; }                               //TODO: fix exp
+    public int getExp(){ return exp; }                               //TODO: fix exp
 
-    public void setExp(double exp) {
+    public void setExp(int exp) {
         this.exp = exp;
     }
 
@@ -117,11 +118,11 @@ public class Tama {
         this.folderName = folderName;
     }
 
-    public double getExpPerFood() {
+    public int getExpPerFood() {
         return expPerFood;
     }
 
-    public void setExpPerFood(double expPerFood) {
+    public void setExpPerFood(int expPerFood) {
         this.expPerFood = expPerFood;
     }
 

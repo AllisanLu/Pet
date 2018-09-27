@@ -1,6 +1,7 @@
 package game.file;
 
 import game.Driver;
+import game.Tama;
 import game.Window;
 
 import javax.swing.*;
@@ -19,8 +20,9 @@ public class WindowActivation implements WindowListener {
         GameLoader.makeFile();
         GameLoader.readFile();
 
-        System.out.println(Driver.getTama());
+        /* System.out.println(Driver.getTama()); */
 
+       // System.out.println(Tama.getInstance());
         Window.setTamaPicture(Driver.getTama());
         //System.out.println("poop is " + Driver.getTama().getPoop());
         for(int i = 0; i < Driver.getTama().getPoop(); i++){
@@ -35,7 +37,7 @@ public class WindowActivation implements WindowListener {
 
     @Override
     public void windowClosing(WindowEvent e) {
-        new GameSaver(Driver.getTama());
+        new GameSaver(Driver.getTamas());
     }
 
     @Override

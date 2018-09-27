@@ -20,6 +20,7 @@ public class FeedButton implements ActionListener {
 
         double currentTime = System.currentTimeMillis();
         Tama currentTama = Driver.getTama();
+        //System.out.println("For feeding: " + Driver.getTama().getFood() + " " + Tama.getInstance());
         //If Tama has been fed in the last 5 minutes prints I'm to full
         Window.addPoop();
 //        if(currentTime - currentTama.getLastTimeFed() < 30000) {
@@ -33,6 +34,7 @@ public class FeedButton implements ActionListener {
                 //levelCounter++;
                 if(currentTama.getPetState() < 1)
                     currentTama.grow();
+                System.out.println("Tama: " + currentTama.getName());
                 System.out.println("BABY HAS GROWN UP!");
             }
 //        }

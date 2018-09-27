@@ -51,6 +51,18 @@ public class Window extends JLabel {
 
                 //System.out.println("LIZARD");
                 break;
+
+            case 2:
+                show.remove(currentTama.getTom()); // this isnt working
+
+                JLabel ghost = new JLabel(new ImageIcon(Window.class.getResource("Images/" + currentTama.getFolderName() + "/deadJerry.gif")));
+                ghost.setBounds((show.getWidth() / 2) - 50, 130, 100, 100);
+                currentTama.setTom(ghost);
+
+                show.add(currentTama.getTom());
+
+                //System.out.println("LIZARD");
+                break;
         }
         reDrawWindow();
     }
@@ -124,8 +136,10 @@ public class Window extends JLabel {
 
     public static void addPoop() {
         Tama currentTama = Driver.getTama();
-        if(poopCounter >= 10) {
+        if(poopCounter >= 15) {
             System.out.println("Pet Died");
+            Driver.getTama().setPetState(2);
+            Window.setTamaPicture(Driver.getTama());
         }
         else {
             JLabel poop = new JLabel(new ImageIcon(Window.class.getResource("Images/poo.png")));
@@ -160,7 +174,6 @@ public class Window extends JLabel {
                 cal = Calendar.getInstance();
                 time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
                 reDrawWindow();
-                System.out.println(time);
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

@@ -1,6 +1,7 @@
 package game.file;
 
 import game.Driver;
+import game.Tama;
 
 import java.io.File;
 import java.util.Scanner;
@@ -9,6 +10,11 @@ import java.util.regex.*;
 public class GameLoader {
     private static File file;
     private static Scanner reader;
+    private static int foodFromFile;
+    private static int petStateFromFile;
+    private static int healthFromFile;
+    private static int poopFromFile;
+
 
     public static File getFile() {
         return file;
@@ -36,9 +42,8 @@ public class GameLoader {
             System.out.println("Setting default settings.");
         }
 
-        //TODO: Make readFile read two Strings than the rest numbers(doubles)
-        //TODO: SERIOUSLY CONSIDER SWITCHING TO LOOPS I THINK IT WILL BE MUCH EASIER
-        //TODO: shut up dududeeeeeeee it already works
+        //TODO: Make readFile read two Strings than the rest numbers(doubles) wuuut
+
         String gameState = "";
           while (reader.hasNext()) {
             gameState += reader.nextLine();
@@ -46,8 +51,7 @@ public class GameLoader {
 
         int currentCount = 0;
         for (String strs : gameState.split(" ")) {
-            if(strs.matches("\\d")){
-               // System.out.println("Here's a number");
+            if(strs.matches("\\d+")){
                 int number = Integer.parseInt(strs);
                 switch(currentCount) {
                     default:
@@ -55,17 +59,20 @@ public class GameLoader {
                         break;
                     case 0:
                         Driver.getTama().setFood(number);
+                        //System.out.println("GAME LOADER: " + "food" + Driver.getTama().getFood());
                         break;
                     case 1:
                         Driver.getTama().setHealth(number);
+                       // System.out.println("GAME LOADER: " + Driver.getTama().getHealth());
                         break;
                     case 2:
                         Driver.getTama().setPetState(number);
+                      //  System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
                         break;
                     case 3:
                         Driver.getTama().setPoop(number);
+                      //  System.out.println("GAME LOADER: " + Driver.getTama().getPoop());
                         break;
-                        //System.out.println("Poop at loaer is " + Driver.getTama().getPoop());
                 }
                 currentCount++;
             }

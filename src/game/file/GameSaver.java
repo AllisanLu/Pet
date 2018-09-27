@@ -19,6 +19,7 @@ public class GameSaver {
 
             for (int i = 0; i < values.length; i++) {
                 pen.write(labels[i] + values[i] + "\n");
+                System.out.println("GAME SAVER: " + labels[i] + ": " + values[i]);
             }
             pen.close();
         } catch(Exception IOException) {

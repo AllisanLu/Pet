@@ -31,7 +31,8 @@ public class FeedButton implements ActionListener {
             currentTama.setFood(currentTama.getFood() + 1);
             if(currentTama.getExp() >= 100) {
                 //levelCounter++;
-                currentTama.grow();
+                if(currentTama.getPetState() < 1)
+                    currentTama.grow();
                 System.out.println("BABY HAS GROWN UP!");
             }
 //        }

@@ -28,7 +28,7 @@ public class Tama {
      * @param name Sets the name for Tama that user created.
      * @param folderName The folder where the data for the Tamas are saved.
      */
-    public Tama(String name, String folderName) {
+    public Tama(String name, String folderName) {      //String folderName what is this for
 	    this.food = 0;
 	    this.name = name;
 	    this.health = 0;

@@ -2,7 +2,6 @@ package game.buttons;
 
 import game.Driver;
 import game.Tama;
-import game.Window;
 
 
 import javax.swing.*;
@@ -19,7 +18,7 @@ public class ResetButton implements ActionListener {
         Tama currentTama = Driver.getTama();
         currentTama.reset();
 
-        Window.removePoop();
+        Tama.removePoop();
         System.out.println("DERP, pet has been reset! \n" +
                             "food: " + Driver.getTama().getFood() + "\n" +
                             "pet state: " + Driver.getTama().getPetState() + "\n" +

@@ -2,7 +2,6 @@ package game.buttons;
 
 import game.Driver;
 import game.Tama;
-import game.Window;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -22,7 +21,7 @@ public class FeedButton implements ActionListener {
         Tama currentTama = Driver.getTama();
         //System.out.println("For feeding: " + Driver.getTama().getFood() + " " + Tama.getInstance());
         //If Tama has been fed in the last 5 minutes prints I'm to full
-        Window.addPoop();
+        Tama.addPoop();
 //        if(currentTime - currentTama.getLastTimeFed() < 30000) {
 //            System.out.println("I'm to full");
 //        }

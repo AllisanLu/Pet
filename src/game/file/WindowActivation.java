@@ -2,7 +2,6 @@ package game.file;
 
 import game.Driver;
 import game.Tama;
-import game.Window;
 
 import javax.swing.*;
 import java.awt.event.WindowEvent;
@@ -12,7 +11,7 @@ public class WindowActivation implements WindowListener {
 
     public WindowActivation() {
         System.out.println("Windows Activated");
-        Window.getShow().addWindowListener(this);
+        Driver.getShow().addWindowListener(this);
     }
 
     @Override
@@ -23,11 +22,11 @@ public class WindowActivation implements WindowListener {
         /* System.out.println(Driver.getTama()); */
 
        // System.out.println(Tama.getInstance());
-        Window.setTamaPicture(Driver.getTama());
+        Tama.setTamaPicture(Driver.getTama());
         //System.out.println("poop is " + Driver.getTama().getPoop());
         for(int i = 0; i < Driver.getTama().getPoop(); i++){
             System.out.println(Driver.getTama().getPoop());
-            Window.addPoop();
+            Tama.addPoop();
             //TODO: add correct amount of poop, why does it only add one right now? btw the Driver.get poop() thing works
         }
 

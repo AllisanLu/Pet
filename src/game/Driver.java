@@ -19,7 +19,7 @@ public class Driver {
         WindowActivation test = new WindowActivation();
         try {
             GameLoader.makeFile();
-        }catch (Exception IoException){
+        } catch (Exception IoException){
             System.out.println("error in Game Loader");
         }
         Window.showPet(Tamas[Tama.getInstance()]);

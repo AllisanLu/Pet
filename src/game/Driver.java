@@ -1,10 +1,6 @@
 package game;
 import game.file.GameLoader;
 import game.file.WindowActivation;
-import sun.plugin2.os.windows.Windows;
-
-import java.util.Calendar;
-import java.util.Date;
 
 public class Driver {
 

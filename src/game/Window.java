@@ -6,10 +6,6 @@ import java.awt.*;
 import javax.swing.JLabel;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Timer;
-import java.util.TimerTask;
-import javax.swing.event.PopupMenuEvent;
-import javax.swing.event.PopupMenuListener;
 
 public class Window extends JLabel {
 
@@ -165,20 +161,38 @@ public class Window extends JLabel {
     }
 
     public static void updateClock() {
-        Calendar cal;
-        JLabel time = new JLabel();
-        time.setBounds(125, 4, 50, 30);
-        show.add(time);
-        while(true) {
-            try {
-                cal = Calendar.getInstance();
-                time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
-                reDrawWindow();
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Calendar cal;
+                JLabel time = new JLabel();
+                time.setBounds(125,4,50,30);
+                show.add(time);
+                while(true) {
+                    cal = Calendar.getInstance();
+                    time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        }
+        }).start();
+        //        Calendar cal;
+//        JLabel time = new JLabel();
+//        time.setBounds(125, 4, 50, 30);
+//        show.add(time);
+//        while(true) {
+//            try {
+//                cal = Calendar.getInstance();
+//                time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
+//                reDrawWindow();
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
 

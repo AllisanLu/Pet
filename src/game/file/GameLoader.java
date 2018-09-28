@@ -1,11 +1,9 @@
 package game.file;
 
 import game.Driver;
-import game.Tama;
 
 import java.io.File;
 import java.util.Scanner;
-import java.util.regex.*;
 
 public class GameLoader {
     private static File file;

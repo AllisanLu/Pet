@@ -49,7 +49,7 @@ public class GameLoader {
             gameState += reader.next();
 
             int currentCount = 0;
-            System.out.println("game state: " + gameState);
+            //System.out.println("game state: " + gameState);
             String strs = "";
             for (int x = 0; x < gameState.length(); x++) {
                 strs += gameState.substring(x, x+1);

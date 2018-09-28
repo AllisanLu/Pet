@@ -25,7 +25,7 @@ public class WindowActivation implements WindowListener {
         Tama.setTamaPicture(Driver.getTama());
         //System.out.println("poop is " + Driver.getTama().getPoop());
         for(int i = 0; i < Driver.getTama().getPoop(); i++){
-            System.out.println(Driver.getTama().getPoop());
+            System.out.println("poop at begining: " + Driver.getTama().getPoop());
             Tama.addPoop();
             //TODO: add correct amount of poop, why does it only add one right now? btw the Driver.get poop() thing works
         }

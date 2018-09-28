@@ -146,8 +146,6 @@ public class Tama {
                 currentTama.setTom(egg);
 
                 Driver.getShow().add(currentTama.getTom());
-
-                //System.out.println("EGG!");
                 break;
             case 1:
                 Driver.getShow().remove(currentTama.getTom()); // this isnt working
@@ -157,20 +155,16 @@ public class Tama {
                 currentTama.setTom(lizard);
 
                 Driver.getShow().add(currentTama.getTom());
-
-                //System.out.println("LIZARD");
                 break;
 
             case 2:
                 Driver.getShow().remove(currentTama.getTom()); // this isnt working
 
-                JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + currentTama.getFolderName() + "/dead.gif")));
+                JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + currentTama.getFolderName() + "/Dead.gif")));
                 ghost.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
                 currentTama.setTom(ghost);
 
                 Driver.getShow().add(currentTama.getTom());
-
-                //System.out.println("LIZARD");
                 break;
         }
         Driver.reDrawWindow();

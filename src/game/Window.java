@@ -86,7 +86,7 @@
 //        show.setVisible(true);
 //
 //        JPopupMenu pop = new JPopupMenu();
-//        pop.addPopupMenuListener(new TamaSwitcher());
+//        pop.addPopupMenuListener(new SwitchToJerry());
 //
 //        JMenuItem jerry = new JMenuItem("Jerry");
 //        JMenuItem terry = new JMenuItem("Terry");

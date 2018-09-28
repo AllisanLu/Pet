@@ -1,8 +1,5 @@
 package game;
-import game.buttons.CleanButton;
-import game.buttons.FeedButton;
-import game.buttons.ResetButton;
-import game.buttons.TamaSwitcher;
+import game.buttons.*;
 import game.file.GameLoader;
 import game.file.WindowActivation;
 
@@ -57,7 +54,6 @@ public class Driver extends JLabel {
         show.setVisible(true);
 
         JPopupMenu pop = new JPopupMenu();
-        pop.addPopupMenuListener(new TamaSwitcher());
 
         JMenuItem jerryMenu = new JMenuItem("Jerry");
         JMenuItem terryMenu = new JMenuItem("Terry");
@@ -68,6 +64,10 @@ public class Driver extends JLabel {
         pop.add(jerryMenu);
         pop.addSeparator();
         pop.add(terryMenu);
+
+        SwitchToJerry switchJ = new SwitchToJerry(jerryMenu);
+        SwitchToTerry switchT = new SwitchToTerry(terryMenu);
+
         show.add(panel);
         reDrawWindow();
     }

@@ -111,6 +111,7 @@ public class Tama {
 	    this.petState += 1;
 
 	    this.exp = 0;
+        Driver.getShow().remove(this.getTom());
         setTamaPicture(this);
     }
 
@@ -131,11 +132,6 @@ public class Tama {
     }
 
     public static JLabel setTamaPicture(Tama currentTama) {
-        try{
-            Driver.getShow().remove(currentTama.getTom());
-        }catch (Exception NullPointerException ){
-            System.out.println("no tama yet!");
-        }
         switch(currentTama.getPetState()) {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");

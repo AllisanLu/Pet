@@ -149,7 +149,29 @@ public class Driver extends JLabel {
         return show;
     }
 
-    public static Tama getTama () { return Tamas[Tama.getInstance()]; }
 
-    public static Tama[] getTamas () { return Tamas; }
+    public static Tama getTama() {
+        return Tamas[Tama.getInstance()];
+    }
+
+    public static Tama[] getTamas() {
+        return Tamas;
+    }
+
+    public static void addTama(JLabel tama) {
+        show.add(tama);
+    }
+
+    public static void removeTama(JLabel tama){
+        show.remove(tama);
+    }
+
+    public static void addPoop(JLabel poop){
+        show.add(poop);
+    }
+
+    public static void removePoop(JLabel poop){
+        show.remove(poop);
+    }
+
 }

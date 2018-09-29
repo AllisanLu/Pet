@@ -22,7 +22,7 @@ public class WindowActivation implements WindowListener {
         /* System.out.println(Driver.getTama()); */
 
        // System.out.println(Tama.getInstance());
-        Tama.setTamaPicture(Driver.getTama());
+        Driver.addTama(Tama.setTamaPicture(Driver.getTama()));
         //System.out.println("poop is " + Driver.getTama().getPoop());
         for(int i = 0; i < Driver.getTama().getPoop(); i++){
             System.out.println("poop at begining: " + Driver.getTama().getPoop());

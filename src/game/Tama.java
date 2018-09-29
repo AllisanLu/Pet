@@ -130,7 +130,7 @@ public class Tama {
         this.expPerFood = expPerFood;
     }
 
-    public static void setTamaPicture(Tama currentTama) {
+    public static JLabel setTamaPicture(Tama currentTama) {
         try{
             Driver.getShow().remove(currentTama.getTom());
         }catch (Exception NullPointerException ){
@@ -145,8 +145,9 @@ public class Tama {
                 egg.setBounds((Driver.getShow().getWidth() / 2) - 12, 170, 22, 27);
                 currentTama.setTom(egg);
 
-                Driver.getShow().add(currentTama.getTom());
+                //Driver.getShow().add(currentTama.getTom());
                 break;
+
             case 1:
                 Driver.getShow().remove(currentTama.getTom()); // this isnt working
 
@@ -154,7 +155,7 @@ public class Tama {
                 lizard.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
                 currentTama.setTom(lizard);
 
-                Driver.getShow().add(currentTama.getTom());
+                //Driver.getShow().add(currentTama.getTom());
                 break;
 
             case 2:
@@ -164,10 +165,10 @@ public class Tama {
                 ghost.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
                 currentTama.setTom(ghost);
 
-                Driver.getShow().add(currentTama.getTom());
+                //Driver.getShow().add(currentTama.getTom());
                 break;
         }
-        Driver.reDrawWindow();
+        return currentTama.getTom();
     }
 
     public static void addPoop() {
@@ -183,7 +184,7 @@ public class Tama {
             poops.add(poop);
             poopCounter++;
             currentTama.setPoop(poopCounter);
-            Driver.getShow().add(poop);
+            Driver.addPoop(poop);
             Driver.reDrawWindow();
         }
     }
@@ -192,7 +193,7 @@ public class Tama {
         Tama currentTama = Driver.getTama();
         if(!(poopCounter == 0)){
             for (int i = 0; i < poops.size(); i++) {
-                Driver.getShow().remove(poops.get(i));
+                Driver.removePoop(poops.get(i));
                 Driver.reDrawWindow();
             }
             poopCounter = 0;

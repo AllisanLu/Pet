@@ -16,17 +16,21 @@ public class WindowActivation implements WindowListener {
 
     @Override
     public void windowOpened(WindowEvent e) {
+        Tama currentTama = Driver.getTama();
+
         GameLoader.makeFile();
         GameLoader.readFile();
 
         /* System.out.println(Driver.getTama()); */
 
        // System.out.println(Tama.getInstance());
-        Driver.addTama(Tama.setTamaPicture(Driver.getTama()));
+        Driver.addTama(currentTama.setTamaPicture());
         //System.out.println("poop is " + Driver.getTama().getPoop());
-        for(int i = 0; i < Driver.getTama().getPoop(); i++){
-            System.out.println("poop at begining: " + Driver.getTama().getPoop());
-            Tama.addPoop();
+        int poop = Driver.getTama().getPoop();
+        currentTama.setPoop(0);
+        for(int i = 0; i < poop; i++){
+            //System.out.println("poop at begining: " + Driver.getTama().getPoop());
+            currentTama.addPoop();
             //TODO: add correct amount of poop, why does it only add one right now? btw the Driver.get poop() thing works
         }
 

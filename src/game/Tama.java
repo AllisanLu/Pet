@@ -13,9 +13,9 @@ public class Tama {
     private double lastTimeFed;
     private static int currentInstance;
     private String folderName;
+
     //for adding and removing poop
-    private static ArrayList<JLabel> poops = new ArrayList<JLabel>();
-    private static int poopCounter;
+    private ArrayList<JLabel> poops = new ArrayList<JLabel>();
 
     /**
      * Sets minimum basic instance variables in Tama. Should
@@ -94,9 +94,7 @@ public class Tama {
 
     public int getExp(){ return exp; }                               //TODO: fix exp
 
-    public void setExp(int exp) {
-        this.exp = exp;
-    }
+    public void setExp(int exp) { this.exp = exp; }
 
     public static int getInstance() { return currentInstance; }
 
@@ -112,7 +110,7 @@ public class Tama {
 
 	    this.exp = 0;
         Driver.removeTama(this.getTom());
-        Driver.addTama(setTamaPicture(this));
+        Driver.addTama(setTamaPicture());
         Driver.reDrawWindow();
     }
 
@@ -132,64 +130,60 @@ public class Tama {
         this.expPerFood = expPerFood;
     }
 
-    public static JLabel setTamaPicture(Tama currentTama) {
-        switch(currentTama.getPetState()) {
+    public JLabel setTamaPicture() {
+        switch(petState) {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");
                 break;
             case 0:
-                JLabel egg = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + currentTama.getFolderName() + "/First.gif")));
-                egg.setBounds((Driver.getShow().getWidth() / 2) - 12, 170, 22, 27);
-                currentTama.setTom(egg);
-
-                //Driver.getShow().add(currentTama.getTom());
-                break;
-
-            case 1:
-                JLabel lizard = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + currentTama.getFolderName() + "/Second.gif")));
-                lizard.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
-                currentTama.setTom(lizard);
-
-                //Driver.getShow().add(currentTama.getTom());
-                break;
-
-            case 2:// this isnt working
-                JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + currentTama.getFolderName() + "/Dead.gif")));
+                JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif")));
                 ghost.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
-                currentTama.setTom(ghost);
+                tom = ghost;
+
+                break;
+            case 1:
+                JLabel egg = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/First.gif")));
+                egg.setBounds((Driver.getShow().getWidth() / 2) - 12, 170, 22, 27);
+                tom = egg;
+
+                break;
+
+            case 2:
+                JLabel lizard = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Second.gif")));
+                lizard.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
+                tom = lizard;
 
                 break;
         }
-        return currentTama.getTom();
+        return tom;
     }
 
-    public static void addPoop() {
-        Tama currentTama = Driver.getTama();
-        if(poopCounter >= 15) {
+    public void addPoop() {
+        Tama currentTama = this;
+        if(poop >= 15) {
             System.out.println("Pet Died");
-            Driver.getTama().setPetState(2);
-            setTamaPicture(Driver.getTama());
+            petState = 0;
+            Driver.removeTama(tom);
+            Driver.addTama(setTamaPicture());
+            Driver.reDrawWindow();
         }
         else {
-            JLabel poop = new JLabel(new ImageIcon(Tama.class.getResource("Images/poo.png")));
-            poop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) (Math.random() * 80));
-            poops.add(poop);
-            poopCounter++;
-            currentTama.setPoop(poopCounter);
-            Driver.addPoop(poop);
+            JLabel aPoop = new JLabel(new ImageIcon(Tama.class.getResource("Images/poo.png")));
+            aPoop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) (Math.random() * 80));
+            poops.add(aPoop);
+            poop++;
+            Driver.addPoop(aPoop);
             Driver.reDrawWindow();
         }
     }
 
-    public static void removePoop() {
-        Tama currentTama = Driver.getTama();
-        if(!(poopCounter == 0)){
+    public void removePoop() {
+        if(!(poop == 0)){
             for (int i = 0; i < poops.size(); i++) {
                 Driver.removePoop(poops.get(i));
                 Driver.reDrawWindow();
             }
-            poopCounter = 0;
-            currentTama.setPoop(poopCounter);
+            poop = 0;
         }
     }
 
@@ -213,11 +207,11 @@ public class Tama {
      */
     public void reset() {
         this.health = 0;
-        this.petState = 0;
+        this.petState = 1;
         this.exp = 0;
         this.food = 0;
         Driver.removeTama(this.getTom());
-        Driver.addTama(setTamaPicture(this));
+        Driver.addTama(setTamaPicture());
         Driver.reDrawWindow();
     }
 }

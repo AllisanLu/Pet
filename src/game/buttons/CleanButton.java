@@ -14,7 +14,9 @@ public class CleanButton implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        Tama.removePoop();
+        Tama currentTama = Driver.getTama();
+
+        currentTama.removePoop();
         System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + Driver.getTama().getPoop());
     }
 }

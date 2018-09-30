@@ -44,7 +44,7 @@ public class Driver extends JLabel {
         show.pack();
         show.setResizable(false);
 
-        Tama.setTamaPicture(currentTama);
+        currentTama.setTamaPicture();
 
         createFeedButton();
         createCleanButton();

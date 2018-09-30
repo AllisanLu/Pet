@@ -111,8 +111,9 @@ public class Tama {
 	    this.petState += 1;
 
 	    this.exp = 0;
-        Driver.getShow().remove(this.getTom());
-        setTamaPicture(this);
+        Driver.removeTama(this.getTom());
+        Driver.addTama(setTamaPicture(this));
+        Driver.reDrawWindow();
     }
 
     public String getFolderName() {
@@ -145,8 +146,6 @@ public class Tama {
                 break;
 
             case 1:
-                Driver.getShow().remove(currentTama.getTom()); // this isnt working
-
                 JLabel lizard = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + currentTama.getFolderName() + "/Second.gif")));
                 lizard.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
                 currentTama.setTom(lizard);
@@ -154,14 +153,11 @@ public class Tama {
                 //Driver.getShow().add(currentTama.getTom());
                 break;
 
-            case 2:
-                Driver.getShow().remove(currentTama.getTom()); // this isnt working
-
+            case 2:// this isnt working
                 JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + currentTama.getFolderName() + "/Dead.gif")));
                 ghost.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
                 currentTama.setTom(ghost);
 
-                //Driver.getShow().add(currentTama.getTom());
                 break;
         }
         return currentTama.getTom();
@@ -220,6 +216,8 @@ public class Tama {
         this.petState = 0;
         this.exp = 0;
         this.food = 0;
-        setTamaPicture(this);
+        Driver.removeTama(this.getTom());
+        Driver.addTama(setTamaPicture(this));
+        Driver.reDrawWindow();
     }
 }

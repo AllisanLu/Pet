@@ -159,7 +159,7 @@ public class Tama {
     }
 
     public void addPoop() {
-        Tama currentTama = this;
+
         if(poop >= 15) {
             System.out.println("Pet Died");
             petState = 0;
@@ -169,7 +169,7 @@ public class Tama {
         }
         else {
             JLabel aPoop = new JLabel(new ImageIcon(Tama.class.getResource("Images/poo.png")));
-            aPoop.setBounds(50, 50, 100 + (int) (Math.random() * 80), 230 + (int) (Math.random() * 80));
+            aPoop.setBounds(50 + (int) (Math.random() * 60), 150 + (int) (Math.random() * 30), 50, 50);
             poops.add(aPoop);
             poop++;
             Driver.addPoop(aPoop);
@@ -178,13 +178,11 @@ public class Tama {
     }
 
     public void removePoop() {
-        if(!(poop == 0)){
-            for (int i = 0; i < poops.size(); i++) {
-                Driver.removePoop(poops.get(i));
-                Driver.reDrawWindow();
-            }
-            poop = 0;
+        for (int i = 0; i < poops.size(); i++) {
+            Driver.removePoop(poops.get(i));
+            Driver.reDrawWindow();
         }
+        poop = 0;
     }
 
     /**

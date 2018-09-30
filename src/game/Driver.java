@@ -46,9 +46,7 @@ public class Driver extends JLabel {
 
         Tama.setTamaPicture(currentTama);
 
-        createFeedButton();
-        createCleanButton();
-        createResetButton();
+        createButtons(Tamas[0]);
         JLabel empty = new JLabel("");
         show.add(empty);
         show.setVisible(true);
@@ -72,36 +70,64 @@ public class Driver extends JLabel {
         reDrawWindow();
     }
 
+    private static void createButtons(Tama currentTama) {
+        ImageIcon feedIcon = new ImageIcon(Tama.class.getResource("Images/FeedButton.png"));
+        JButton feed = new JButton(feedIcon);
+        feed.addActionListener(event -> {
+            double currentTime = System.currentTimeMillis();
+            //System.out.println("For feeding: " + Driver.getTama().getFood() + " " + Tama.getInstance());
+            //If Tama has been fed in the last 5 minutes prints I'm to full
+            Tama.addPoop();
+//        if(currentTime - currentTama.getLastTimeFed() < 30000) {
+//            System.out.println("I'm to full");
+//        }
+//        else {
+            currentTama.setLastTimeFed(System.currentTimeMillis());
+            currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood()); //!! removed [level counter from getExpPerFood "array" ?
+            currentTama.setFood(currentTama.getFood() + 1);
+            if(currentTama.getExp() >= 100) {
+                //levelCounter++;
+                if(currentTama.getPetState() < 1) {
+                    currentTama.grow();
+                    System.out.println("Tama: " + currentTama.getName());
+                    System.out.println("BABY HAS GROWN UP!");
+                }
+            }
+        });
+        feed.setBounds(23, 227, feedIcon.getIconWidth(), feedIcon.getIconHeight());
+        show.add(feed);
+
+        ImageIcon cleanIcon = new ImageIcon(Tama.class.getResource("Images/CleanButton.png"));
+        JButton clean = new JButton(cleanIcon);
+        clean.addActionListener(event -> {
+            Tama.removePoop();
+            System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + Driver.getTama().getPoop());
+        });
+        clean.setBounds(81, 227, cleanIcon.getIconWidth(), cleanIcon.getIconHeight());
+        show.add(clean);
+
+        ImageIcon resetIcon = new ImageIcon(Tama.class.getResource("Images/ResetButton.png"));
+        JButton reset = new JButton(resetIcon);
+        reset.addActionListener(event -> {
+            currentTama.reset();
+
+            Tama.removePoop();
+            System.out.println("DERP, pet has been reset! \n" +
+                    "food: " + Driver.getTama().getFood() + "\n" +
+                    "pet state: " + Driver.getTama().getPetState() + "\n" +
+                    "poop: " + Driver.getTama().getPoop() + "\n" +
+                    "Health: " + Driver.getTama().getHealth());
+        });
+        reset.setBounds(136, 227, resetIcon.getIconWidth(), resetIcon.getIconHeight());
+        show.add(reset);
+    }
+
     private static void createSettings() {
         show.setContentPane(new JLabel(new ImageIcon(Tama.class.getResource("Images/Border.png"))));
 
         JLabel health = new JLabel(new ImageIcon(Tama.class.getResource("Images/HealthBar.png")));
         health.setBounds(65, 35, 107, 7);
         show.add(health);
-    }
-
-    private static void createFeedButton() {
-        JButton feed = new JButton(new ImageIcon(Tama.class.getResource("Images/FeedButton.png")));
-        feed.setBounds(23, 227, 40, 15);
-        show.add(feed);
-
-        FeedButton feedButton = new FeedButton(feed);
-    }
-
-    private static void createCleanButton() {
-        JButton clean = new JButton(new ImageIcon(Tama.class.getResource("Images/CleanButton.png")));
-        clean.setBounds(81, 227, 40, 15);
-        show.add(clean);
-
-        CleanButton cleanButton = new CleanButton(clean);
-    }
-
-    private static void createResetButton() {
-        JButton reset = new JButton(new ImageIcon(Tama.class.getResource("Images/ResetButton.png")));
-        reset.setBounds(136, 227, 40, 15);
-        show.add(reset);
-
-        ResetButton resetButton = new ResetButton(reset);
     }
 
     public static void reDrawWindow() {             //should this be public?

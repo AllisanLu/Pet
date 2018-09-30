@@ -57,7 +57,7 @@ public class Driver extends JLabel {
         currentTama.setTamaPicture();
         //show.add(currentTama.getTom());
 
-        createButtons(Tamas[0]);
+        createButtons();
 
         JPopupMenu pop = new JPopupMenu();
 
@@ -81,9 +81,8 @@ public class Driver extends JLabel {
     /**
      * Creates buttons and sets their actions with the Method addActionListener.
      * Adds the buttons to JFrame show after they are fully ready
-     * @param currentTama
      */
-    private static void createButtons(Tama currentTama) {
+    private static void createButtons() {
         ImageIcon feedIcon = new ImageIcon(Tama.class.getResource("Images/FeedButton.png"));
         JButton feed = new JButton(feedIcon);
 /*        feed.addActionListener(new ActionListener() {
@@ -95,6 +94,7 @@ public class Driver extends JLabel {
 */
         feed.addActionListener(event -> {   //Same as calling above but shorter
             double currentTime = System.currentTimeMillis();
+            Tama currentTama = Driver.getTama();
 
             currentTama.addPoop();
 
@@ -116,6 +116,8 @@ public class Driver extends JLabel {
         ImageIcon cleanIcon = new ImageIcon(Tama.class.getResource("Images/CleanButton.png"));
         JButton clean = new JButton(cleanIcon);
         clean.addActionListener(event -> {
+            Tama currentTama = Driver.getTama();
+
             currentTama.removePoop();
             System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + Driver.getTama().getPoop());
         });
@@ -125,6 +127,8 @@ public class Driver extends JLabel {
         ImageIcon resetIcon = new ImageIcon(Tama.class.getResource("Images/ResetButton.png"));
         JButton reset = new JButton(resetIcon);
         reset.addActionListener(event -> {
+            Tama currentTama = Driver.getTama();
+
             show.remove(currentTama.getTom());
             currentTama.reset();
             show.add(currentTama.getTom());

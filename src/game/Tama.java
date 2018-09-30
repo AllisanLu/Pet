@@ -208,6 +208,7 @@ public class Tama {
         this.petState = 1;
         this.exp = 0;
         this.food = 0;
+
         Driver.removeTama(this.getTom());
         Driver.addTama(setTamaPicture());
         Driver.reDrawWindow();

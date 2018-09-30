@@ -169,7 +169,7 @@ public class Tama {
         }
         else {
             JLabel aPoop = new JLabel(new ImageIcon(Tama.class.getResource("Images/poo.png")));
-            aPoop.setBounds(40 + (int) (Math.random() * 80), 150 + (int) (Math.random() * 30), 50, 50);
+            aPoop.setBounds(40 + (int) (Math.random() * 80), 150 + (int) (Math.random() * 20), 50, 50);
             poops.add(aPoop);
             poop++;
             Driver.addPoop(aPoop);

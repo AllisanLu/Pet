@@ -22,6 +22,7 @@ public class FeedButton implements ActionListener {
         //System.out.println("For feeding: " + Driver.getTama().getFood() + " " + Tama.getInstance());
         //If Tama has been fed in the last 5 minutes prints I'm to full
         currentTama.addPoop();
+        //System.out.println(currentTama.getName()+ " " + currentTama.getPoop());
 //        if(currentTime - currentTama.getLastTimeFed() < 30000) {
 //            System.out.println("I'm to full");
 //        }

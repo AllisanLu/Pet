@@ -23,9 +23,11 @@ public class SwitchToJerry implements ActionListener {
         if(Tama.getInstance() != 0) {
             Tama currentTama = Driver.getTama();
 
+            int remainingPoop = currentTama.getPoop();
             currentTama.removePoop();
+            currentTama.setPoop(remainingPoop);
 
-            Driver.getShow().remove(currentTama.getTom());
+            Driver.removeTama(currentTama.getTom());
 
             System.out.println("Switching to Jerry");
 
@@ -36,7 +38,7 @@ public class SwitchToJerry implements ActionListener {
 
             //System.out.println(currentTama.getPoop());
             int poop = currentTama.getPoop();
-            System.out.println(currentTama.getName() + " " + currentTama.getPoop());
+            //System.out.println(currentTama.getName() + " " + currentTama.getPoop());
             currentTama.setPoop(0);
             for (int i = 0; i < poop; i++) {
                 currentTama.addPoop();

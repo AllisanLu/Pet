@@ -23,6 +23,7 @@ public class SwitchToTerry implements ActionListener{
             System.out.println("Switching to Terry");
 
             Tama.setInstance(1);
+
             currentTama = Driver.getTama();
             //System.out.println(currentTama);
 

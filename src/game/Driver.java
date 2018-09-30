@@ -54,8 +54,8 @@ public class Driver extends JLabel {
         JLabel health = new JLabel(healthIcon);
         health.setBounds(65, 35, healthIcon.getIconWidth(), healthIcon.getIconHeight());
         show.add(health);
-
-        Tama.setTamaPicture(currentTama);
+        currentTama.setTamaPicture();
+        show.add(currentTama.getTom());
 
         createButtons(Tamas[0]);
 
@@ -95,13 +95,9 @@ public class Driver extends JLabel {
 */
         feed.addActionListener(event -> {   //Same as calling above but shorter
             double currentTime = System.currentTimeMillis();
-            //System.out.println("For feeding: " + Driver.getTama().getFood() + " " + Tama.getInstance());
-            //If Tama has been fed in the last 5 minutes prints I'm to full
-            Tama.addPoop();
-//        if(currentTime - currentTama.getLastTimeFed() < 30000) {
-//            System.out.println("I'm to full");
-//        }
-//        else {
+
+            currentTama.addPoop();
+
             currentTama.setLastTimeFed(System.currentTimeMillis());
             currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood()); //!! removed [level counter from getExpPerFood "array" ?
             currentTama.setFood(currentTama.getFood() + 1);
@@ -120,7 +116,7 @@ public class Driver extends JLabel {
         ImageIcon cleanIcon = new ImageIcon(Tama.class.getResource("Images/CleanButton.png"));
         JButton clean = new JButton(cleanIcon);
         clean.addActionListener(event -> {
-            Tama.removePoop();
+            currentTama.removePoop();
             System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + Driver.getTama().getPoop());
         });
         clean.setBounds(81, 227, cleanIcon.getIconWidth(), cleanIcon.getIconHeight());
@@ -129,9 +125,10 @@ public class Driver extends JLabel {
         ImageIcon resetIcon = new ImageIcon(Tama.class.getResource("Images/ResetButton.png"));
         JButton reset = new JButton(resetIcon);
         reset.addActionListener(event -> {
+            show.remove(currentTama.getTom());
             currentTama.reset();
-
-            Tama.removePoop();
+            show.add(currentTama.getTom());
+            currentTama.removePoop();
             System.out.println("DERP: RESET INCOMING: \n" + currentTama);
         });
         reset.setBounds(136, 227, resetIcon.getIconWidth(), resetIcon.getIconHeight());
@@ -181,18 +178,22 @@ public class Driver extends JLabel {
 
     public static void addTama(JLabel tama) {
         show.add(tama);
+        reDrawWindow();
     }
 
     public static void removeTama(JLabel tama){
         show.remove(tama);
+        reDrawWindow();
     }
 
     public static void addPoop(JLabel poop){
         show.add(poop);
+        reDrawWindow();
     }
 
     public static void removePoop(JLabel poop){
         show.remove(poop);
+        reDrawWindow();
     }
 
 }

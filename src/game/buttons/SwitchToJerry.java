@@ -23,7 +23,7 @@ public class SwitchToJerry implements ActionListener {
         if(Tama.getInstance() != 0) {
             Tama currentTama = Driver.getTama();
             for (int x = 0; x < currentTama.getPoop(); x++) {
-                Tama.removePoop();
+                currentTama.removePoop();
             }
             Driver.getShow().remove(currentTama.getTom());
 
@@ -32,11 +32,12 @@ public class SwitchToJerry implements ActionListener {
             Tama.setInstance(0);
 
             currentTama = Driver.getTama();
-            Driver.getShow().add(Tama.setTamaPicture(currentTama));
+            currentTama.setTamaPicture();
+            Driver.getShow().add(currentTama.getTom());
 
             System.out.println(currentTama.getPoop());
-            for (int i = 0; i < Driver.getTama().getPoop(); i++) {
-                Tama.addPoop();
+            for (int i = 0; i < currentTama.getPoop(); i++) {
+                currentTama.removePoop();
                 //TODO: add correct amount of poop, why does it only add one right now? btw the Driver.get poop() thing works
             }
         }

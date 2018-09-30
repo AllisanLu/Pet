@@ -110,8 +110,9 @@ public class Tama {
 	    this.petState += 1;
 
 	    this.exp = 0;
-        Driver.getShow().remove(tom);
+        Driver.removeTama(tom);
         setTamaPicture();
+        Driver.addTama(tom);
     }
 
     public String getFolderName() {
@@ -162,6 +163,10 @@ public class Tama {
     public void addPoop() {
         if(this.poop >= 15) {
             System.out.println("Pet Died");
+            petState = 0;
+            Driver.removeTama(tom);
+            setTamaPicture();
+            Driver.addTama(tom);
         }
         else {
             ImageIcon poopIcon = new ImageIcon(Tama.class.getResource("Images/poo.png"));
@@ -169,6 +174,7 @@ public class Tama {
             poop.setBounds(50 + (int) (Math.random() * 60), 150 + (int) (Math.random() * 30), poopIcon.getIconWidth(), poopIcon.getIconHeight());
             poops.add(poop);
             this.poop++;
+            Driver.addPoop(poop);
         }
     }
 

@@ -55,7 +55,7 @@ public class Driver extends JLabel {
         health.setBounds(65, 35, healthIcon.getIconWidth(), healthIcon.getIconHeight());
         show.add(health);
         currentTama.setTamaPicture();
-        show.add(currentTama.getTom());
+        //show.add(currentTama.getTom());
 
         createButtons(Tamas[0]);
 
@@ -103,7 +103,7 @@ public class Driver extends JLabel {
             currentTama.setFood(currentTama.getFood() + 1);
             if(currentTama.getExp() >= 100) {
                 //levelCounter++;
-                if(currentTama.getPetState() < 1) {
+                if(currentTama.getPetState() < 2) {
                     currentTama.grow();
                     System.out.println("Tama: " + currentTama.getName());
                     System.out.println("BABY HAS GROWN UP!");

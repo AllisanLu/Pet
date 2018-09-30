@@ -160,18 +160,22 @@ public class Driver extends JLabel {
 
     public static void addTama(JLabel tama) {
         show.add(tama);
+        reDrawWindow();
     }
 
     public static void removeTama(JLabel tama){
         show.remove(tama);
+        reDrawWindow();
     }
 
     public static void addPoop(JLabel poop){
         show.add(poop);
+        reDrawWindow();
     }
 
     public static void removePoop(JLabel poop){
         show.remove(poop);
+        reDrawWindow();
     }
 
 }

@@ -141,6 +141,7 @@ public class Tama {
                 tom = ghost;
 
                 break;
+
             case 1:
                 JLabel egg = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/First.gif")));
                 egg.setBounds((Driver.getShow().getWidth() / 2) - 12, 170, 22, 27);
@@ -165,22 +166,19 @@ public class Tama {
             petState = 0;
             Driver.removeTama(tom);
             Driver.addTama(setTamaPicture());
-            Driver.reDrawWindow();
         }
         else {
             JLabel aPoop = new JLabel(new ImageIcon(Tama.class.getResource("Images/poo.png")));
-            aPoop.setBounds(50 + (int) (Math.random() * 60), 150 + (int) (Math.random() * 30), 50, 50);
+            aPoop.setBounds(40 + (int) (Math.random() * 70), 150 + (int) (Math.random() * 30), 50, 50);
             poops.add(aPoop);
             poop++;
             Driver.addPoop(aPoop);
-            Driver.reDrawWindow();
         }
     }
 
     public void removePoop() {
         for (int i = 0; i < poops.size(); i++) {
             Driver.removePoop(poops.get(i));
-            Driver.reDrawWindow();
         }
         poop = 0;
     }
@@ -209,8 +207,7 @@ public class Tama {
         this.exp = 0;
         this.food = 0;
 
-        Driver.removeTama(this.getTom());
+        Driver.removeTama(tom);
         Driver.addTama(setTamaPicture());
-        Driver.reDrawWindow();
     }
 }

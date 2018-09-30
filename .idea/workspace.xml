@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f3f698c-1475-4806-8ea5-9454ef13b725" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/Driver.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/Driver.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/File/WindowActivation.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/File/WindowActivation.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/Tama.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/Tama.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/buttons/SwitchToJerry.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/buttons/SwitchToJerry.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/buttons/SwitchToTerry.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/buttons/SwitchToTerry.class" />
+      <change beforePath="$PROJECT_DIR$/src/game/Driver.java" afterPath="$PROJECT_DIR$/src/game/Driver.java" />
       <change beforePath="$PROJECT_DIR$/src/game/Tama.java" afterPath="$PROJECT_DIR$/src/game/Tama.java" />
-      <change beforePath="$PROJECT_DIR$/src/game/file/WindowActivation.java" afterPath="$PROJECT_DIR$/src/game/file/WindowActivation.java" />
+      <change beforePath="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" afterPath="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" />
+      <change beforePath="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" afterPath="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +58,10 @@
       <file leaf-file-name="Tama.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/Tama.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="177" column="5" lean-forward="true" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
+            <state relative-caret-position="125">
+              <caret line="170" column="57" lean-forward="true" selection-start-line="170" selection-start-column="57" selection-end-line="170" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#529#537#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +70,8 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+            <state relative-caret-position="1013">
+              <caret line="177" column="23" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
               <folding>
                 <element signature="e#3234#3235#0" expanded="true" />
                 <element signature="e#3301#3302#0" expanded="true" />
@@ -75,13 +82,13 @@
                 <element signature="e#4785#4786#0" expanded="true" />
                 <element signature="e#4813#4814#0" expanded="true" />
                 <element signature="e#4860#4861#0" expanded="true" />
-                <element signature="e#4890#4891#0" expanded="true" />
-                <element signature="e#4939#4940#0" expanded="true" />
-                <element signature="e#4972#4973#0" expanded="true" />
-                <element signature="e#5018#5019#0" expanded="true" />
-                <element signature="e#5048#5049#0" expanded="true" />
-                <element signature="e#5097#5098#0" expanded="true" />
-                <element signature="e#5130#5131#0" expanded="true" />
+                <element signature="e#4914#4915#0" expanded="true" />
+                <element signature="e#4963#4964#0" expanded="true" />
+                <element signature="e#5020#5021#0" expanded="true" />
+                <element signature="e#5066#5067#0" expanded="true" />
+                <element signature="e#5120#5121#0" expanded="true" />
+                <element signature="e#5169#5170#0" expanded="true" />
+                <element signature="e#5226#5227#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/game/file/WindowActivation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -100,8 +107,8 @@
       <file leaf-file-name="SwitchToTerry.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="119">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#258#259#0" expanded="true" />
@@ -111,11 +118,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SwitchToJerry.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="36" column="56" lean-forward="true" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+              <folding>
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#474#475#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ResetButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/buttons/ResetButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="173">
+              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,23 +146,10 @@
       <file leaf-file-name="CleanButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/buttons/CleanButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="255">
               <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SwitchToJerry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="e#425#426#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -193,16 +200,16 @@
         <option value="$PROJECT_DIR$/src/game/buttons/TamaSwitcher.java" />
         <option value="$PROJECT_DIR$/src/game/buttons/ResetButton.java" />
         <option value="$PROJECT_DIR$/src/game/buttons/CleanButton.java" />
-        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" />
-        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" />
-        <option value="$PROJECT_DIR$/src/game/Driver.java" />
         <option value="$PROJECT_DIR$/src/game/buttons/FeedButton.java" />
         <option value="$PROJECT_DIR$/src/game/file/WindowActivation.java" />
+        <option value="$PROJECT_DIR$/src/game/Driver.java" />
+        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" />
+        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" />
         <option value="$PROJECT_DIR$/src/game/Tama.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="140" />
     <option name="y" value="59" />
     <option name="width" value="1063" />
@@ -259,10 +266,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,7 +419,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="59" width="1063" height="644" extended-state="0" />
+    <frame x="140" y="59" width="1063" height="644" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -521,13 +528,13 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -538,7 +545,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -557,13 +563,13 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -615,7 +621,6 @@
           <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -634,13 +639,13 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,7 +687,6 @@
           <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -701,13 +705,13 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -749,7 +753,6 @@
           <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -799,13 +802,13 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -816,7 +819,6 @@
           <caret line="210" column="22" lean-forward="true" selection-start-line="210" selection-start-column="22" selection-end-line="210" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -835,13 +837,13 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -883,7 +885,6 @@
           <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,13 +923,13 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -982,39 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/buttons/CleanButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/file/GameLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1031,14 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/file/WindowActivation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/buttons/FeedButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1049,10 +1009,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/buttons/ResetButton.java">
+    <entry file="file://$PROJECT_DIR$/src/game/buttons/CleanButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1061,8 +1021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        <state relative-caret-position="1013">
+          <caret line="177" column="23" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
           <folding>
             <element signature="e#3234#3235#0" expanded="true" />
             <element signature="e#3301#3302#0" expanded="true" />
@@ -1073,24 +1033,64 @@
             <element signature="e#4785#4786#0" expanded="true" />
             <element signature="e#4813#4814#0" expanded="true" />
             <element signature="e#4860#4861#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
-            <element signature="e#5097#5098#0" expanded="true" />
-            <element signature="e#5130#5131#0" expanded="true" />
+            <element signature="e#4914#4915#0" expanded="true" />
+            <element signature="e#4963#4964#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5066#5067#0" expanded="true" />
+            <element signature="e#5120#5121#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/file/WindowActivation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="36" column="56" lean-forward="true" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+          <folding>
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/buttons/ResetButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Tama.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="177" column="5" lean-forward="true" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
+        <state relative-caret-position="125">
+          <caret line="170" column="57" lean-forward="true" selection-start-line="170" selection-start-column="57" selection-end-line="170" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
           </folding>
         </state>
       </provider>

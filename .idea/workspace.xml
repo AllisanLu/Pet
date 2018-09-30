@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f3f698c-1475-4806-8ea5-9454ef13b725" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/Driver.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/Driver.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/File/WindowActivation.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/File/WindowActivation.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pet/game/Tama.class" afterPath="$PROJECT_DIR$/out/production/Pet/game/Tama.class" />
-      <change beforePath="$PROJECT_DIR$/src/game/Driver.java" afterPath="$PROJECT_DIR$/src/game/Driver.java" />
-      <change beforePath="$PROJECT_DIR$/src/game/Tama.java" afterPath="$PROJECT_DIR$/src/game/Tama.java" />
-      <change beforePath="$PROJECT_DIR$/src/game/file/WindowActivation.java" afterPath="$PROJECT_DIR$/src/game/file/WindowActivation.java" />
+      <change beforePath="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" afterPath="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" />
+      <change beforePath="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" afterPath="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,11 +81,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Tama.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tama.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/Tama.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="112" column="31" lean-forward="false" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
+            <state relative-caret-position="235">
+              <caret line="176" column="33" lean-forward="true" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="106" column="39" lean-forward="true" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+            <state relative-caret-position="143">
+              <caret line="128" column="32" lean-forward="true" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -121,11 +116,12 @@
       <file leaf-file-name="SwitchToTerry.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#307#308#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,7 +130,7 @@
       <file leaf-file-name="GameLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/file/GameLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
+            <state relative-caret-position="16">
               <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -156,11 +152,12 @@
       <file leaf-file-name="SwitchToJerry.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#474#475#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,16 +194,16 @@
         <option value="$PROJECT_DIR$/src/game/buttons/ResetButton.java" />
         <option value="$PROJECT_DIR$/src/game/file/GameLoader.java" />
         <option value="$PROJECT_DIR$/src/game/buttons/TamaSwitcher.java" />
-        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" />
-        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" />
         <option value="$PROJECT_DIR$/src/game/file/WindowActivation.java" />
         <option value="$PROJECT_DIR$/src/game/Driver.java" />
         <option value="$PROJECT_DIR$/src/game/Tama.java" />
+        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java" />
+        <option value="$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="186" />
+    <option name="x" value="187" />
     <option name="y" value="42" />
     <option name="width" value="1063" />
     <option name="height" value="644" />
@@ -415,7 +412,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="186" y="42" width="1063" height="644" extended-state="1" />
+    <frame x="187" y="42" width="1063" height="644" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -450,16 +447,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/game/Driver.java</url>
-          <line>127</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -488,6 +476,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -517,6 +506,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -543,39 +533,7 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/awt/windows/WPanelPeer.class" />
-    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/event/ActionListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/game/file/GameLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/file/WindowActivation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -584,21 +542,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/game/file/GameLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="106" column="39" lean-forward="true" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="16">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToJerry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/buttons/SwitchToTerry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Tama.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="112" column="31" lean-forward="false" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
+        <state relative-caret-position="235">
+          <caret line="176" column="33" lean-forward="true" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="128" column="32" lean-forward="true" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

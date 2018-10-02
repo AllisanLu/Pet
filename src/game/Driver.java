@@ -18,7 +18,8 @@ public class Driver extends JLabel {
     public static void main(String[] args) {
         Tama jerry = new Tama("jerry", "jerry");
         Tama terry = new Tama("terry", "terry");
-        Tama.setInstance(0);
+
+
         Tamas = new Tama[2];
         Tamas[0] = jerry;
         Tamas[1] = terry;
@@ -126,10 +127,8 @@ public class Driver extends JLabel {
         JButton reset = new JButton(resetIcon);
         reset.addActionListener(event -> {
             Tama currentTama = Driver.getTama();
-
-            show.remove(currentTama.getTom());
             currentTama.reset();
-            show.add(currentTama.getTom());
+            changeTamaLabel(currentTama.getTom());
             currentTama.removePoop();
             System.out.println("DERP: RESET INCOMING: \n" + currentTama);
         });

@@ -12,7 +12,7 @@ public class Driver extends JLabel {
     private static JFrame show = new JFrame("Tamagachi");
     private static final int SHOW_WIDTH = 206;
     private static final int SHOW_HEIGHT = 279;
-
+    private static JLabel currentTamaPic = new JLabel("");
     private static Tama[] Tamas;
 
     public static void main(String[] args) {
@@ -54,8 +54,6 @@ public class Driver extends JLabel {
         JLabel health = new JLabel(healthIcon);
         health.setBounds(65, 35, healthIcon.getIconWidth(), healthIcon.getIconHeight());
         show.add(health);
-        currentTama.setTamaPicture();
-        //show.add(currentTama.getTom());
 
         createButtons();
 
@@ -180,13 +178,10 @@ public class Driver extends JLabel {
         return Tamas;
     }
 
-    public static void addTama(JLabel tama) {
-        show.add(tama);
-        reDrawWindow();
-    }
-
-    public static void removeTama(JLabel tama){
-        show.remove(tama);
+    public static void changeTamaLabel(JLabel newTama) {
+        show.remove(currentTamaPic);
+        show.add(newTama);
+        currentTamaPic = newTama;
         reDrawWindow();
     }
 

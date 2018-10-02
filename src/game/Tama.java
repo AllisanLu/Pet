@@ -63,10 +63,6 @@ public class Tama {
 
     public JLabel getTom() { return tom; }
 
-    public void setTom(JLabel tom) {
-        this.tom = tom;
-    }
-
     public int getHealth() {
         return health;
     }
@@ -110,9 +106,8 @@ public class Tama {
 	    this.petState += 1;
 
 	    this.exp = 0;
-        Driver.removeTama(tom);
         setTamaPicture();
-        Driver.addTama(tom);
+        Driver.changeTamaLabel(tom);
     }
 
     public String getFolderName() {
@@ -164,9 +159,8 @@ public class Tama {
         if(this.poop >= 15) {
             System.out.println("Pet Died");
             petState = 0;
-            Driver.removeTama(tom);
             setTamaPicture();
-            Driver.addTama(tom);
+            Driver.changeTamaLabel(tom);
         }
         else {
             ImageIcon poopIcon = new ImageIcon(Tama.class.getResource("Images/poo.png"));

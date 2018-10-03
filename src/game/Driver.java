@@ -10,48 +10,54 @@ import javax.swing.JLabel;
 
 public class Driver extends JLabel {
     private static JFrame show = new JFrame("Tamagachi");
-
+    public static final int SHOW_WIDTH = 206;
+    public static final int SHOW_HEIGHT = 279;
+    private static JLabel currentTamaPic = new JLabel("");
     private static Tama[] Tamas;
 
     public static void main(String[] args) {
         Tama jerry = new Tama("jerry", "jerry");
         Tama terry = new Tama("terry", "terry");
-        Tama.setInstance(0);
+
+
         Tamas = new Tama[2];
         Tamas[0] = jerry;
         Tamas[1] = terry;
-        WindowActivation test = new WindowActivation();
+        WindowActivation test = new WindowActivation(show);
+
         try {
             GameLoader.makeFile();
         } catch (Exception IoException) {
             System.out.println("error in Game Loader");
         }
 
-        showPet(Tamas[0]);
+        startingShow();
 
         updateClock();
     }
 
-    public static void showPet(Tama currentTama) {
+    public static void startingShow() {
+
+        //Settings of the JFrame show
         show.setLayout(null);
-        ImageIcon img = new ImageIcon(Tama.class.getResource("Images/Egg.png"));
-
-        createSettings();
-
-        show.setPreferredSize(new Dimension(206, 279));
         show.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        show.setIconImage(img.getImage());
-        show.pack();
+        show.setPreferredSize(new Dimension(SHOW_WIDTH, SHOW_HEIGHT));
         show.setResizable(false);
+        show.pack();
 
-        currentTama.setTamaPicture();
+        //Icon that displays on Windows Bar
+        show.setIconImage(new ImageIcon(Tama.class.getResource("Images/Egg.png")).getImage());
 
-        createFeedButton();
-        createCleanButton();
-        createResetButton();
-        JLabel empty = new JLabel("");
-        show.add(empty);
-        show.setVisible(true);
+        //Background of the Application Tama
+        show.setContentPane(new JLabel(new ImageIcon(Tama.class.getResource("Images/Border.png"))));
+
+        //This sets a static healthBar with no way to modify it in the future.
+        ImageIcon healthIcon = new ImageIcon(Tama.class.getResource("Images/HealthBar.png"));
+        JLabel health = new JLabel(healthIcon);
+        health.setBounds(65, 35, healthIcon.getIconWidth(), healthIcon.getIconHeight());
+        show.add(health);
+
+        createButtons();
 
         JPopupMenu pop = new JPopupMenu();
 
@@ -69,84 +75,94 @@ public class Driver extends JLabel {
         SwitchToTerry switchT = new SwitchToTerry(terryMenu);
 
         show.add(panel);
-        reDrawWindow();
+        show.setVisible(true);
     }
 
-    private static void createSettings() {
-        show.setContentPane(new JLabel(new ImageIcon(Tama.class.getResource("Images/Border.png"))));
+    /**
+     * Creates buttons and sets their actions with the Method addActionListener.
+     * Adds the buttons to JFrame show after they are fully ready
+     */
+    private static void createButtons() {
+        ImageIcon feedIcon = new ImageIcon(Tama.class.getResource("Images/FeedButton.png"));
+        JButton feed = new JButton(feedIcon);
+        /*        feed.addActionListener(new ActionListener() {
+         *             @Override
+         *             public void actionPerformed(ActionEvent e) {
+         *
+         *              }
+         *          });
+         */
+        feed.addActionListener(event -> {   //Same as calling above but shorter
+            double currentTime = System.currentTimeMillis();
+            Tama currentTama = Driver.getTama();
 
-        JLabel health = new JLabel(new ImageIcon(Tama.class.getResource("Images/HealthBar.png")));
-        health.setBounds(65, 35, 107, 7);
-        show.add(health);
-    }
+            currentTama.addPoop();
 
-    private static void createFeedButton() {
-        JButton feed = new JButton(new ImageIcon(Tama.class.getResource("Images/FeedButton.png")));
-        feed.setBounds(23, 227, 40, 15);
+            currentTama.setLastTimeFed(System.currentTimeMillis());
+            currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood()); //!! removed [level counter from getExpPerFood "array" ?
+            currentTama.setFood(currentTama.getFood() + 1);
+            if(currentTama.getExp() >= 100) {
+                //levelCounter++;
+                if(currentTama.getPetState() < 2) {
+                    currentTama.grow();
+                    System.out.println("Tama: " + currentTama.getName());
+                    System.out.println("BABY HAS GROWN UP!");
+                }
+            }
+        });
+        feed.setBounds(23, 227, feedIcon.getIconWidth(), feedIcon.getIconHeight());
         show.add(feed);
 
-        FeedButton feedButton = new FeedButton(feed);
-    }
+        ImageIcon cleanIcon = new ImageIcon(Tama.class.getResource("Images/CleanButton.png"));
+        JButton clean = new JButton(cleanIcon);
+        clean.addActionListener(event -> {
+            Tama currentTama = Driver.getTama();
 
-    private static void createCleanButton() {
-        JButton clean = new JButton(new ImageIcon(Tama.class.getResource("Images/CleanButton.png")));
-        clean.setBounds(81, 227, 40, 15);
+            currentTama.removePoop();
+            System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + Driver.getTama().getPoop());
+        });
+        clean.setBounds(81, 227, cleanIcon.getIconWidth(), cleanIcon.getIconHeight());
         show.add(clean);
 
-        CleanButton cleanButton = new CleanButton(clean);
-    }
-
-    private static void createResetButton() {
-        JButton reset = new JButton(new ImageIcon(Tama.class.getResource("Images/ResetButton.png")));
-        reset.setBounds(136, 227, 40, 15);
+        ImageIcon resetIcon = new ImageIcon(Tama.class.getResource("Images/ResetButton.png"));
+        JButton reset = new JButton(resetIcon);
+        reset.addActionListener(event -> {
+            Tama currentTama = Driver.getTama();
+            currentTama.reset();
+            changeTamaLabel(currentTama.getTom());
+            currentTama.removePoop();
+            System.out.println("DERP: RESET INCOMING: \n" + currentTama);
+        });
+        reset.setBounds(136, 227, resetIcon.getIconWidth(), resetIcon.getIconHeight());
         show.add(reset);
-
-        ResetButton resetButton = new ResetButton(reset);
     }
 
-    public static void reDrawWindow() {             //should this be public?
+
+    public static void reDrawWindow() {
         show.repaint();
     }
 
-    public static void updateClock() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Calendar cal;
-                JLabel time = new JLabel();
-                time.setBounds(125, 4, 50, 30);
-                show.add(time);
-                while (true) {
-                    cal = Calendar.getInstance();
-                    time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+    /**
+     * Starts a new Thread that updates the clock in the corner right of the screen.
+     * Clock is run in standard 24-Hour Time.
+     * Should only be called to once.
+     */
+    private static void updateClock() {
+        new Thread(() -> {
+            Calendar cal;
+            JLabel time = new JLabel();
+            time.setBounds(125, 4, 50, 30);
+            show.add(time);
+            while (true) {
+                cal = Calendar.getInstance();
+                time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         }).start();
-
-        //        Calendar cal;
-//        JLabel time = new JLabel();
-//        time.setBounds(125, 4, 50, 30);
-//        show.add(time);
-//        while(true) {
-//            try {
-//                cal = Calendar.getInstance();
-//                time.setText(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":" + cal.get(Calendar.SECOND));
-//                reDrawWindow();
-//                Thread.sleep(1000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-    }
-
-    public static JFrame getShow() {
-        return show;
     }
 
 
@@ -158,13 +174,10 @@ public class Driver extends JLabel {
         return Tamas;
     }
 
-    public static void addTama(JLabel tama) {
-        show.add(tama);
-        reDrawWindow();
-    }
-
-    public static void removeTama(JLabel tama){
-        show.remove(tama);
+    public static void changeTamaLabel(JLabel newTama) {
+        show.remove(currentTamaPic);
+        show.add(newTama);
+        currentTamaPic = newTama;
         reDrawWindow();
     }
 

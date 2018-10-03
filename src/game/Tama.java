@@ -9,11 +9,10 @@ public class Tama {
     private int food, health, petState, poop;
     private JLabel tom;
     private int exp;
-    private int expPerFood = 10;                     //TODO: was there a reason why expPerFood was an array if so, I can change it back
+    private int expPerFood = 10;            //TODO: was there a reason why expPerFood was an array if so, I can change it back
     private double lastTimeFed;
     private static int currentInstance;
     private String folderName;
-
     //for adding and removing poop
     private ArrayList<JLabel> poops = new ArrayList<JLabel>();
 
@@ -33,14 +32,14 @@ public class Tama {
      * @param folderName The folder where the data for the Tamas are saved.
      */
     public Tama(String name, String folderName) {      //String folderName what is this for
-	    this.food = 0;
-	    this.name = name;
-	    this.health = 0;
-	    this.petState = 0;
-	    this.exp = 0;
-	    this.folderName = folderName;
-	    this.lastTimeFed = System.currentTimeMillis();      //TODO: gotta fix last time fed
-	}
+        this.food = 0;
+        this.name = name;
+        this.health = 0;
+        this.petState = 0;
+        this.exp = 0;
+        this.folderName = folderName;
+        this.lastTimeFed = System.currentTimeMillis();      //TODO: gotta fix last time fed
+    }
 
     public String getName() {
         return name;
@@ -55,7 +54,7 @@ public class Tama {
     }
 
     public void setFood(int food) {
-	    this.food = food;
+        this.food = food;
     }
 
     public int getPoop(){ return poop; }
@@ -63,10 +62,6 @@ public class Tama {
     public void setPoop(int poop) { this.poop = poop;}
 
     public JLabel getTom() { return tom; }
-
-    public void setTom(JLabel tom) {
-        this.tom = tom;
-    }
 
     public int getHealth() {
         return health;
@@ -89,12 +84,14 @@ public class Tama {
     }
 
     public double getLastTimeFed() {
-	    return this.lastTimeFed;
+        return this.lastTimeFed;
     }
 
     public int getExp(){ return exp; }                               //TODO: fix exp
 
-    public void setExp(int exp) { this.exp = exp; }
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
 
     public static int getInstance() { return currentInstance; }
 
@@ -106,12 +103,11 @@ public class Tama {
      * Increases the petState and changes the picture to the next level of the Tama.
      */
     public void grow() {
-	    this.petState += 1;
+        this.petState += 1;
 
-	    this.exp = 0;
-        Driver.removeTama(this.getTom());
-        Driver.addTama(setTamaPicture());
-        Driver.reDrawWindow();
+        this.exp = 0;
+        setTamaPicture();
+        Driver.changeTamaLabel(tom);
     }
 
     public String getFolderName() {
@@ -130,49 +126,51 @@ public class Tama {
         this.expPerFood = expPerFood;
     }
 
-    public JLabel setTamaPicture() {
+    public void setTamaPicture() {
         switch(petState) {
             default:
                 System.out.println("Value in Windows setTamaPicture was not correct.");
                 break;
             case 0:
-                JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif")));
-                ghost.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
+                ImageIcon ghostIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif"));
+                JLabel ghost = new JLabel(ghostIcon);
+                ghost.setBounds((Driver.SHOW_WIDTH - ghostIcon.getIconWidth())/2 , 130, ghostIcon.getIconWidth(), ghostIcon.getIconHeight());
                 tom = ghost;
 
                 break;
 
             case 1:
-                JLabel egg = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/First.gif")));
-                egg.setBounds((Driver.getShow().getWidth() / 2) - 12, 170, 22, 27);
+                ImageIcon eggIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/First.gif"));
+                JLabel egg = new JLabel(eggIcon);
+                egg.setBounds((Driver.SHOW_WIDTH - eggIcon.getIconWidth())/2, 170, eggIcon.getIconWidth(), eggIcon.getIconHeight());
                 tom = egg;
+
 
                 break;
 
             case 2:
-                JLabel lizard = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Second.gif")));
-                lizard.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
+                ImageIcon lizardIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Second.gif"));
+                JLabel lizard = new JLabel(lizardIcon);
+                lizard.setBounds((Driver.WIDTH - lizardIcon.getIconWidth())/2, 130, lizardIcon.getIconWidth(), lizardIcon.getIconHeight());
                 tom = lizard;
-
                 break;
         }
-        return tom;
     }
 
     public void addPoop() {
-
-        if(poop >= 15) {
+        if(this.poop >= 15) {
             System.out.println("Pet Died");
             petState = 0;
-            Driver.removeTama(tom);
-            Driver.addTama(setTamaPicture());
+            setTamaPicture();
+            Driver.changeTamaLabel(tom);
         }
         else {
-            JLabel aPoop = new JLabel(new ImageIcon(Tama.class.getResource("Images/poo.png")));
-            aPoop.setBounds(40 + (int) (Math.random() * 80), 150 + (int) (Math.random() * 20), 50, 50);
-            poops.add(aPoop);
-            poop++;
-            Driver.addPoop(aPoop);
+            ImageIcon poopIcon = new ImageIcon(Tama.class.getResource("Images/poo.png"));
+            JLabel poop = new JLabel(poopIcon);
+            poop.setBounds(50 + (int) (Math.random() * 30), 150 + (int) (Math.random() * 30), poopIcon.getIconWidth(), poopIcon.getIconHeight());
+            poops.add(poop);
+            this.poop++;
+            Driver.addPoop(poop);
         }
     }
 
@@ -188,26 +186,28 @@ public class Tama {
      * running of the application. @return String of those variables.
      */
     public String toString() {
-	    return "Name: " + name + "\n" +
-                "TamaInstance: " + currentInstance + "\n" +
+        return "Name: " + name + "\n" +
+                "Tama Instance: " + currentInstance + "\n" +
+                "Folder Name: " + folderName + "\n" +
                 "Food: " + food + "\n" +
                 "Health: " + health + "\n" +
-                "PetState: " + petState + "\n" +
-                "Exp: " + exp + "\n";
-
-
+                "Pet State: " + petState + "\n" +
+                "Poop: " + poop + "\n" +
+                "Exp: " + exp + "\n" +
+                "Exp Per Food: " + expPerFood + "\n" +
+                "Last Time Fed: " + lastTimeFed + "\n" +
+                "ArrayList Poops: " + poops.toArray();
     }
 
     /**
      * Resets all the feature about the Tama except for the name and foldername.
      */
     public void reset() {
-        this.health = 0;
-        this.petState = 1;
-        this.exp = 0;
-        this.food = 0;
-
-        Driver.removeTama(tom);
-        Driver.addTama(setTamaPicture());
+        health = 0;
+        petState = 1;
+        exp = 0;
+        food = 0;
+        lastTimeFed = System.currentTimeMillis();
+        setTamaPicture();
     }
 }

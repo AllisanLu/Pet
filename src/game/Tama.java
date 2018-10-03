@@ -133,7 +133,7 @@ public class Tama {
                 break;
             case 0:
                 JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif")));
-                ghost.setBounds((Driver.getShow().getWidth() / 2) - 50, 130, 100, 100);
+                ghost.setBounds((Driver.SHOW_WIDTH / 2) - 50, 130, 100, 100);
                 tom = ghost;
 
                 break;
@@ -141,7 +141,7 @@ public class Tama {
             case 1:
                 ImageIcon eggIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/First.gif"));
                 JLabel egg = new JLabel(eggIcon);
-                egg.setBounds((Driver.WIDTH + eggIcon.getIconWidth())/2, 170, eggIcon.getIconWidth(), eggIcon.getIconHeight());
+                egg.setBounds((Driver.SHOW_WIDTH + eggIcon.getIconWidth())/2, 170, eggIcon.getIconWidth(), eggIcon.getIconHeight());
                 tom = egg;
 
 

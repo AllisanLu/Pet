@@ -9,9 +9,9 @@ import java.awt.event.WindowListener;
 
 public class WindowActivation implements WindowListener {
 
-    public WindowActivation() {
+    public WindowActivation(JFrame show) {
         System.out.println("Windows Activated");
-        Driver.getShow().addWindowListener(this);
+        show.addWindowListener(this);
     }
 
     @Override

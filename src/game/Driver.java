@@ -10,8 +10,8 @@ import javax.swing.JLabel;
 
 public class Driver extends JLabel {
     private static JFrame show = new JFrame("Tamagachi");
-    private static final int SHOW_WIDTH = 206;
-    private static final int SHOW_HEIGHT = 279;
+    public static final int SHOW_WIDTH = 206;
+    public static final int SHOW_HEIGHT = 279;
     private static JLabel currentTamaPic = new JLabel("");
     private static Tama[] Tamas;
 
@@ -23,7 +23,8 @@ public class Driver extends JLabel {
         Tamas = new Tama[2];
         Tamas[0] = jerry;
         Tamas[1] = terry;
-        WindowActivation test = new WindowActivation();
+        WindowActivation test = new WindowActivation(show);
+
         try {
             GameLoader.makeFile();
         } catch (Exception IoException) {
@@ -162,10 +163,6 @@ public class Driver extends JLabel {
                 }
             }
         }).start();
-    }
-
-    public static JFrame getShow() {
-        return show;
     }
 
 

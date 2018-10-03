@@ -31,12 +31,12 @@ public class Driver extends JLabel {
             System.out.println("error in Game Loader");
         }
 
-        startingShow(Tamas[0]);
+        startingShow();
 
         updateClock();
     }
 
-    public static void startingShow(Tama currentTama) {
+    public static void startingShow() {
 
         //Settings of the JFrame show
         show.setLayout(null);

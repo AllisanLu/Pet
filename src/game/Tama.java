@@ -9,7 +9,7 @@ public class Tama {
     private int food, health, petState, poop;
     private JLabel tom;
     private int exp;
-    private int expPerFood = 10;                     //TODO: was there a reason why expPerFood was an array if so, I can change it back
+    private int expPerFood = 10;            //TODO: was there a reason why expPerFood was an array if so, I can change it back
     private double lastTimeFed;
     private static int currentInstance;
     private String folderName;
@@ -132,8 +132,9 @@ public class Tama {
                 System.out.println("Value in Windows setTamaPicture was not correct.");
                 break;
             case 0:
-                JLabel ghost = new JLabel(new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif")));
-                ghost.setBounds((Driver.SHOW_WIDTH / 2) - 50, 130, 100, 100);
+                ImageIcon ghostIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif"));
+                JLabel ghost = new JLabel(ghostIcon);
+                ghost.setBounds((Driver.SHOW_WIDTH - ghostIcon.getIconWidth())/2 , 130, ghostIcon.getIconWidth(), ghostIcon.getIconHeight());
                 tom = ghost;
 
                 break;
@@ -141,7 +142,7 @@ public class Tama {
             case 1:
                 ImageIcon eggIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/First.gif"));
                 JLabel egg = new JLabel(eggIcon);
-                egg.setBounds((Driver.SHOW_WIDTH + eggIcon.getIconWidth())/2, 170, eggIcon.getIconWidth(), eggIcon.getIconHeight());
+                egg.setBounds((Driver.SHOW_WIDTH - eggIcon.getIconWidth())/2, 170, eggIcon.getIconWidth(), eggIcon.getIconHeight());
                 tom = egg;
 
 
@@ -150,7 +151,7 @@ public class Tama {
             case 2:
                 ImageIcon lizardIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Second.gif"));
                 JLabel lizard = new JLabel(lizardIcon);
-                lizard.setBounds((Driver.WIDTH / 2) + lizardIcon.getIconWidth(), 130, lizardIcon.getIconWidth(), lizardIcon.getIconHeight());
+                lizard.setBounds((Driver.WIDTH - lizardIcon.getIconWidth())/2, 130, lizardIcon.getIconWidth(), lizardIcon.getIconHeight());
                 tom = lizard;
                 break;
         }
@@ -202,10 +203,11 @@ public class Tama {
      * Resets all the feature about the Tama except for the name and foldername.
      */
     public void reset() {
-        this.health = 0;
-        this.petState = 1;
-        this.exp = 0;
-        this.food = 0;
+        health = 0;
+        petState = 1;
+        exp = 0;
+        food = 0;
+        lastTimeFed = System.currentTimeMillis();
         setTamaPicture();
     }
 }

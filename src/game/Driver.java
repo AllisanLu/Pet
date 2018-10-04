@@ -1,5 +1,4 @@
 package game;
-import game.buttons.*;
 import game.file.GameLoader;
 import game.file.WindowActivation;
 
@@ -8,7 +7,7 @@ import java.awt.*;
 import java.util.Calendar;
 import javax.swing.JLabel;
 
-public class Driver extends JLabel {
+public class Driver {
     private static JFrame show = new JFrame("Tamagachi");
     public static final int SHOW_WIDTH = 206;
     public static final int SHOW_HEIGHT = 279;
@@ -71,8 +70,8 @@ public class Driver extends JLabel {
         pop.addSeparator();
         pop.add(terryMenu);
 
-        SwitchToJerry switchJ = new SwitchToJerry(jerryMenu);
-        SwitchToTerry switchT = new SwitchToTerry(terryMenu);
+        TamaSwitcher switchJ = new TamaSwitcher(jerryMenu);
+        TamaSwitcher switchT = new TamaSwitcher(terryMenu);
 
         show.add(panel);
         show.setVisible(true);

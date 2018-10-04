@@ -8,10 +8,6 @@ import java.util.Scanner;
 public class GameLoader {
     private static File file;
     private static Scanner reader;
-    private static int foodFromFile;
-    private static int petStateFromFile;
-    private static int healthFromFile;
-    private static int poopFromFile;
     private static int tamaOn = 0;
 
 

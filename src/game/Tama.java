@@ -134,9 +134,8 @@ public class Tama {
             case 0:
                 ImageIcon ghostIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif"));
                 JLabel ghost = new JLabel(ghostIcon);
-                ghost.setBounds((Driver.SHOW_WIDTH - ghostIcon.getIconWidth())/2 , 130, ghostIcon.getIconWidth(), ghostIcon.getIconHeight());
+                ghost.setBounds((Driver.SHOW_WIDTH - ghostIcon.getIconWidth())/2 , 150, ghostIcon.getIconWidth(), ghostIcon.getIconHeight());
                 tom = ghost;
-
                 break;
 
             case 1:
@@ -144,15 +143,15 @@ public class Tama {
                 JLabel egg = new JLabel(eggIcon);
                 egg.setBounds((Driver.SHOW_WIDTH - eggIcon.getIconWidth())/2, 170, eggIcon.getIconWidth(), eggIcon.getIconHeight());
                 tom = egg;
-
-
                 break;
 
             case 2:
                 ImageIcon lizardIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Second.gif"));
                 JLabel lizard = new JLabel(lizardIcon);
-                lizard.setBounds((Driver.WIDTH - lizardIcon.getIconWidth())/2, 130, lizardIcon.getIconWidth(), lizardIcon.getIconHeight());
+
+                lizard.setBounds((Driver.SHOW_WIDTH - lizardIcon.getIconWidth())/2, 150, lizardIcon.getIconWidth(), lizardIcon.getIconHeight());
                 tom = lizard;
+
                 break;
         }
     }
@@ -167,7 +166,7 @@ public class Tama {
         else {
             ImageIcon poopIcon = new ImageIcon(Tama.class.getResource("Images/poo.png"));
             JLabel poop = new JLabel(poopIcon);
-            poop.setBounds(50 + (int) (Math.random() * 30), 150 + (int) (Math.random() * 30), poopIcon.getIconWidth(), poopIcon.getIconHeight());
+            poop.setBounds((Driver.SHOW_WIDTH-tom.getWidth())/2 + (int) (Math.random() * 50), 180 + (int) (Math.random() * 5), poopIcon.getIconWidth(), poopIcon.getIconHeight());
             poops.add(poop);
             this.poop++;
             Driver.addPoop(poop);
@@ -196,7 +195,7 @@ public class Tama {
                 "Exp: " + exp + "\n" +
                 "Exp Per Food: " + expPerFood + "\n" +
                 "Last Time Fed: " + lastTimeFed + "\n" +
-                "ArrayList Poops: " + poops.toArray();
+                "ArrayList Poops: " + poops;
     }
 
     /**

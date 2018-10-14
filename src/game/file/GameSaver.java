@@ -9,28 +9,24 @@ public class GameSaver {
 
     private FileWriter pen;
 
-    public GameSaver(Tama[] tamas) {
+    public GameSaver() {
         int tamaOn = 0;
-        Tama currentTama;
         String[] labels = {"food: ", " health: ", " petState: ", " poop: ", " EXP: "};
         //System.out.println("GameSaver ran");
 
         try {
             pen = new FileWriter(GameLoader.getFile());
             //System.out.println("Got file!");
-
-            for(int x = 0; x < tamas.length; x++) {
-                currentTama = tamas[tamaOn];
-                //System.out.println(currentTama);
+            for(int i = 0; i < Driver.tamas.getTotalTamas(); i++) {
+                Driver.tamas.setTamaIndex(i);
+                Tama currentTama = Driver.tamas.getTama();
                 pen.write(currentTama.getName() + " ");
                 int[] values = {currentTama.getFood(), currentTama.getHealth(), currentTama.getPetState(), currentTama.getPoop(), currentTama.getExp()};
 
-                for (int i = 0; i < values.length; i++) {
-                    pen.write(labels[i] + values[i]);
-                    //System.out.println("GAME SAVER: " + labels[i] + ": " + values[i]);
+                for (int k = 0; k < values.length; k++) {
+                    pen.write(labels[k] + values[k]);
                 }
                 pen.write(" " + System.getProperty("line.separator"));
-                tamaOn++;
             }
             pen.close();
         } catch(Exception IOException) {

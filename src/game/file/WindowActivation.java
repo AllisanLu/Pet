@@ -20,7 +20,7 @@ public class WindowActivation implements WindowListener {
         GameLoader.readFile();
 
         /* System.out.println(Driver.getTama()); */
-        Tama currentTama = Driver.getTama();
+        Tama currentTama = Driver.tamas.getTama();
         // System.out.println(Tama.getInstance());
         currentTama.setTamaPicture();
         Driver.changeTamaLabel(currentTama.getTom());
@@ -35,7 +35,7 @@ public class WindowActivation implements WindowListener {
 
     @Override
     public void windowClosing(WindowEvent e) {
-        new GameSaver(Driver.getTamas());
+        new GameSaver();
     }
 
     @Override

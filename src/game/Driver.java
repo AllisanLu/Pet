@@ -12,23 +12,18 @@ public class Driver {
     public static final int SHOW_WIDTH = 206;
     public static final int SHOW_HEIGHT = 279;
     private static JLabel currentTamaPic = new JLabel("");
-    private static Tama[] Tamas;
+    //private static Tama[] Tamas;
+    public static Tamas tamas;
 
     public static void main(String[] args) {
         Tama jerry = new Tama("jerry", "jerry");
         Tama terry = new Tama("terry", "terry");
+        tamas = new Tamas(jerry, new Tama[]{jerry, terry}, 0);
 
-
-        Tamas = new Tama[2];
-        Tamas[0] = jerry;
-        Tamas[1] = terry;
+        //Tamas = new Tama[2];
+        //Tamas[0] = jerry;
+        //Tamas[1] = terry;
         WindowActivation test = new WindowActivation(show);
-
-        try {
-            GameLoader.makeFile();
-        } catch (Exception IoException) {
-            System.out.println("error in Game Loader");
-        }
 
         startingShow();
 
@@ -92,32 +87,32 @@ public class Driver {
          */
         feed.addActionListener(event -> {   //Same as calling above but shorter
             double currentTime = System.currentTimeMillis();
-            Tama currentTama = Driver.getTama();
+            Tama currentTama = tamas.getTama();
 
-            currentTama.addPoop();
-
-            currentTama.setLastTimeFed(System.currentTimeMillis());
-            currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood()); //!! removed [level counter from getExpPerFood "array" ?
-            currentTama.setFood(currentTama.getFood() + 1);
-            if(currentTama.getExp() >= 100) {
-                //levelCounter++;
-                if(currentTama.getPetState() < 2) {
+            if(currentTama.getLastTimeFed() + 300000 > currentTime) {
+                currentTama.addPoop();
+                currentTama.setLastTimeFed(currentTime);
+                currentTama.setExp(currentTama.getExp() + currentTama.getExpPerFood());
+                currentTama.setFood(currentTama.getFood() + 1);
+                if (currentTama.getExp() >= 100) {
                     currentTama.grow();
-                    System.out.println("Tama: " + currentTama.getName());
-                    System.out.println("BABY HAS GROWN UP!");
                 }
             }
+            else {
+                System.out.println("Time till hungry: " + (currentTama.getLastTimeFed() - (300000 + currentTime)));
+            }
         });
+
         feed.setBounds(23, 227, feedIcon.getIconWidth(), feedIcon.getIconHeight());
         show.add(feed);
 
         ImageIcon cleanIcon = new ImageIcon(Tama.class.getResource("Images/CleanButton.png"));
         JButton clean = new JButton(cleanIcon);
         clean.addActionListener(event -> {
-            Tama currentTama = Driver.getTama();
+            Tama currentTama = tamas.getTama();
 
             currentTama.removePoop();
-            System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + Driver.getTama().getPoop());
+            System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + currentTama.getPoop());
         });
         clean.setBounds(81, 227, cleanIcon.getIconWidth(), cleanIcon.getIconHeight());
         show.add(clean);
@@ -125,7 +120,7 @@ public class Driver {
         ImageIcon resetIcon = new ImageIcon(Tama.class.getResource("Images/ResetButton.png"));
         JButton reset = new JButton(resetIcon);
         reset.addActionListener(event -> {
-            Tama currentTama = Driver.getTama();
+            Tama currentTama = tamas.getTama();
             currentTama.reset();
             changeTamaLabel(currentTama.getTom());
             currentTama.removePoop();
@@ -164,13 +159,13 @@ public class Driver {
     }
 
 
-    public static Tama getTama() {
-        return Tamas[Tama.getInstance()];
-    }
-
-    public static Tama[] getTamas() {
-        return Tamas;
-    }
+//    public static Tama getTama() {
+//        return Tamas[Tama.getInstance()];
+//    }
+//
+//    public static Tama[] getTamas() {
+//        return Tamas;
+//    }
 
     public static void changeTamaLabel(JLabel newTama) {
         show.remove(currentTamaPic);

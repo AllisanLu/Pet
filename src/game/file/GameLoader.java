@@ -1,6 +1,7 @@
 package game.file;
 
 import game.Driver;
+import game.Tama;
 
 import java.io.File;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class GameLoader {
 
     /**
      * If the method cannot find a txt File in the correct spot and name, it creates one to save
-     * future data on the Tamas into.
+     * future data on the game.Tamas into.
      */
     public static void makeFile() {
         //System.out.println("this ran");
@@ -56,28 +57,29 @@ public class GameLoader {
                         strs = strs.replaceAll("\\s", "");
                         int number = Integer.parseInt(strs);
                         //System.out.println("number: " + number);
+                        Driver.tamas.setTamaIndex(tamaOn);
                         switch (currentCount) {
                             default:
                                 System.out.println("That didn't work:" + number + ", counter at " + currentCount);
                                 break;
                             case 0:
-                                Driver.getTamas()[tamaOn].setFood(number);
+                                Driver.tamas.getTama().setFood(number);
                                 //System.out.println("GAME LOADER: " + "food" + Driver.getTama().getFood());
                                 break;
                             case 1:
-                                Driver.getTamas()[tamaOn].setHealth(number);
+                                Driver.tamas.getTama().setHealth(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getHealth());
                                 break;
                             case 2:
-                                Driver.getTamas()[tamaOn].setPetState(number);
+                                Driver.tamas.getTama().setPetState(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
                                 break;
                             case 3:
-                                Driver.getTamas()[tamaOn].setPoop(number);
+                                Driver.tamas.getTama().setPoop(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getPoop());
                                 break;
                             case 4:
-                                Driver.getTamas()[tamaOn].setExp(number);
+                                Driver.tamas.getTama().setExp(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getExp());
                         }
                         currentCount++;                    }

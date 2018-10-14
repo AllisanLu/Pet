@@ -24,12 +24,12 @@ public class Tama {
         this.food = 0;
         this.health = 0;
         this.poop = 0;
-        this.lastTimeFed = System.currentTimeMillis();
+        this.lastTimeFed = 0;
     }
 
     /**
      * @param name Sets the name for Tama that user created.
-     * @param folderName The folder where the data for the Tamas are saved.
+     * @param folderName The folder where the data for the game.Tamas are saved.
      */
     public Tama(String name, String folderName) {      //String folderName what is this for
         this.food = 0;
@@ -103,11 +103,13 @@ public class Tama {
      * Increases the petState and changes the picture to the next level of the Tama.
      */
     public void grow() {
-        this.petState += 1;
+        if(petState < 2) {
+            this.petState += 1;
 
-        this.exp = 0;
-        setTamaPicture();
-        Driver.changeTamaLabel(tom);
+            this.exp = 0;
+            setTamaPicture();
+            Driver.changeTamaLabel(tom);
+        }
     }
 
     public String getFolderName() {

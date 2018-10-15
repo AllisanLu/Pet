@@ -65,7 +65,7 @@ public class Driver {
         pop.addSeparator();
         pop.add(terryMenu);
         
-        TamaSwitcher tamSwitch = new TamaSwitcher(terryMenu, jerryMenu);
+        //TamaSwitcher tamSwitch = new TamaSwitcher(terryMenu, jerryMenu);
 
         show.add(panel);
         show.setVisible(true);

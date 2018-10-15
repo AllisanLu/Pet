@@ -197,7 +197,7 @@ public class Tama {
                 "Exp: " + exp + "\n" +
                 "Exp Per Food: " + expPerFood + "\n" +
                 "Last Time Fed: " + lastTimeFed + "\n" +
-                "ArrayList Poops: " + poops;
+                "ArrayList Poops: " + poops.size();
     }
 
     /**

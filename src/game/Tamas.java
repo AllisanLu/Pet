@@ -18,14 +18,14 @@ public class Tamas {
     }
 
     public void setTamaIndex(int index) {
-        if(index > 0 && index < allTamas.length) {
+        if(index >= 0 && index < allTamas.length) {
             tamaIndex = index;
         }
     }
 
-    public Tama getTama() {
-        return allTamas[tamaIndex];
-    }
+    public Tama getTama() { return allTamas[tamaIndex]; }
+
+    public Tama[] getTamaArray(){ return allTamas; }
 
     public int getTotalTamas() {
         return allTamas.length;

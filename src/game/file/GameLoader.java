@@ -52,34 +52,35 @@ public class GameLoader {
                 strs += gameState.substring(x, x+1);
 
                 if(gameState.substring(x, x+1).equals(" ")) {
-                    //System.out.println(strs + " : " + strs.matches("\\d+ "));
+
                     if (strs.matches("\\d+ ")) {
                         strs = strs.replaceAll("\\s", "");
                         int number = Integer.parseInt(strs);
-                        //System.out.println("number: " + number);
-                        Driver.tamas.setTamaIndex(tamaOn);
+
+                        //Driver.tamas.setTamaIndex(tamaOn);
+                        Tama currentTama = Driver.tamas.getTamaArray()[tamaOn];
                         switch (currentCount) {
                             default:
                                 System.out.println("That didn't work:" + number + ", counter at " + currentCount);
                                 break;
                             case 0:
-                                Driver.tamas.getTama().setFood(number);
+                                currentTama.setFood(number);
                                 //System.out.println("GAME LOADER: " + "food" + Driver.getTama().getFood());
                                 break;
                             case 1:
-                                Driver.tamas.getTama().setHealth(number);
+                                currentTama.setHealth(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getHealth());
                                 break;
                             case 2:
-                                Driver.tamas.getTama().setPetState(number);
+                                currentTama.setPetState(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
                                 break;
                             case 3:
-                                Driver.tamas.getTama().setPoop(number);
+                                currentTama.setPoop(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getPoop());
                                 break;
                             case 4:
-                                Driver.tamas.getTama().setExp(number);
+                                currentTama.setExp(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getExp());
                         }
                         currentCount++;                    }

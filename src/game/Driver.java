@@ -1,11 +1,10 @@
 package game;
-import game.file.GameLoader;
+
 import game.file.WindowActivation;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
-import javax.swing.JLabel;
 
 public class Driver {
     private static JFrame show = new JFrame("Tamagachi");

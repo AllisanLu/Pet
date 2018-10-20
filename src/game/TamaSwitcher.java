@@ -4,24 +4,21 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TamaSwitcher implements ActionListener{
+public class TamaSwitcher implements ActionListener {
     public TamaSwitcher(JMenuItem... Jmen) {
-        for(JMenuItem J : Jmen) {
+        for (JMenuItem J : Jmen) {
             J.addActionListener(this);
         }
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.getActionCommand() + " " + Driver.tamas.getTama().getName());
-        if(!e.getActionCommand().equalsIgnoreCase(Driver.tamas.getTama().getName())) {
+        if (!e.getActionCommand().equalsIgnoreCase(Driver.tamas.getTama().getName())) {
             Tama currentTama = Driver.tamas.getTama();
-
             currentTama.removePoop();
 
-
-            System.out.println("Switching to Terry");
-
-            Driver.tamas.setTamaIndex(Math.abs(Tama.getInstance() - 1));
+            Driver.tamas.setTamaIndex(e.getActionCommand());
 
             currentTama = Driver.tamas.getTama();
             //System.out.println(currentTama);

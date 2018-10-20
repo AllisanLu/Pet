@@ -77,13 +77,7 @@ public class Driver {
     private static void createButtons() {
         ImageIcon feedIcon = new ImageIcon(Tama.class.getResource("Images/FeedButton.png"));
         JButton feed = new JButton(feedIcon);
-        /*        feed.addActionListener(new ActionListener() {
-         *             @Override
-         *             public void actionPerformed(ActionEvent e) {
-         *
-         *              }
-         *          });
-         */
+
         feed.addActionListener(event -> {   //Same as calling above but shorter
             double currentTime = System.currentTimeMillis();
             Tama currentTama = tamas.getTama();

@@ -6,13 +6,12 @@ import java.util.ArrayList;
 public class Tama {
 
     private String name;
-    private int food, health, petState, poop;
+    private int food, health, petState;
     private JLabel tom;
     private int exp;
     private int expPerFood = 10;            //TODO: was there a reason why expPerFood was an array if so, I can change it back
     private double lastTimeFed;
     private String folderName;
-    //for adding and removing poop
     private ArrayList<JLabel> poops = new ArrayList<JLabel>();
 
     /**
@@ -22,7 +21,6 @@ public class Tama {
     public Tama() {
         this.food = 0;
         this.health = 0;
-        this.poop = 0;
         this.lastTimeFed = 0;
     }
 
@@ -53,11 +51,13 @@ public class Tama {
     }
 
     public int getPoop() {
-        return poop;
+        return poops.size();
     }
 
     public void setPoop(int poop) {
-        this.poop = poop;
+        for(int i = 0; i < poop; i++) {
+            addPoop();
+        }
     }
 
     public JLabel getTom() {
@@ -109,14 +109,6 @@ public class Tama {
         }
     }
 
-    public String getFolderName() {
-        return folderName;
-    }
-
-    public void setFolderName(String folderName) {
-        this.folderName = folderName;
-    }
-
     public int getExpPerFood() {
         return expPerFood;
     }
@@ -156,7 +148,7 @@ public class Tama {
     }
 
     public void addPoop() {
-        if (this.poop >= 15) {
+        if (poops.size() >= 15) {
             System.out.println("Pet Died");
             petState = 0;
             setTamaPicture();
@@ -166,7 +158,6 @@ public class Tama {
             JLabel poop = new JLabel(poopIcon);
             poop.setBounds((Driver.SHOW_WIDTH - tom.getWidth()) / 2 + (int) (Math.random() * 50), 180 + (int) (Math.random() * 5), poopIcon.getIconWidth(), poopIcon.getIconHeight());
             poops.add(poop);
-            this.poop++;
             Driver.addPoop(poop);
         }
     }
@@ -175,7 +166,6 @@ public class Tama {
         for (int i = 0; i < poops.size(); i++) {
             Driver.removePoop(poops.get(i));
         }
-        poop = 0;
     }
 
     /**
@@ -188,7 +178,6 @@ public class Tama {
                 "Food: " + food + "\n" +
                 "Health: " + health + "\n" +
                 "Pet State: " + petState + "\n" +
-                "Poop: " + poop + "\n" +
                 "Exp: " + exp + "\n" +
                 "Exp Per Food: " + expPerFood + "\n" +
                 "Last Time Fed: " + lastTimeFed + "\n" +
@@ -203,6 +192,7 @@ public class Tama {
         petState = 1;
         exp = 0;
         food = 0;
+        removePoop();
         lastTimeFed = System.currentTimeMillis();
         setTamaPicture();
     }

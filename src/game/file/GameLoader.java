@@ -56,9 +56,9 @@ public class GameLoader {
                     if (strs.matches("\\d+ ")) {
                         strs = strs.replaceAll("\\s", "");
                         int number = Integer.parseInt(strs);
-
+                        Driver.tamas.setTamaIndex(tamaOn);
                         //Driver.tamas.setTamaIndex(tamaOn);
-                        Tama currentTama = Driver.tamas.getTamaArray()[tamaOn];
+                        Tama currentTama = Driver.tamas.getTama();
                         switch (currentCount) {
                             default:
                                 System.out.println("That didn't work:" + number + ", counter at " + currentCount);
@@ -73,6 +73,7 @@ public class GameLoader {
                                 break;
                             case 2:
                                 currentTama.setPetState(number);
+                                currentTama.setTamaPicture();
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
                                 break;
                             case 3:
@@ -83,7 +84,8 @@ public class GameLoader {
                                 currentTama.setExp(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getExp());
                         }
-                        currentCount++;                    }
+                        currentCount++;
+                    }
                     strs = "";
                 }
             }

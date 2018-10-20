@@ -26,12 +26,7 @@ public class TamaSwitcher implements ActionListener {
             currentTama.setTamaPicture();
             Driver.changeTamaLabel(currentTama.getTom());
 
-            int poop = currentTama.getPoop();
-            System.out.println(currentTama.getName() + " " + currentTama.getPoop());
-            currentTama.setPoop(0);
-            for (int i = 0; i < poop; i++) {
-                currentTama.addPoop();
-            }
+            currentTama.addPoop();
         }
     }
 }

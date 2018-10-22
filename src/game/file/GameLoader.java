@@ -73,7 +73,6 @@ public class GameLoader {
                                 break;
                             case 2:
                                 currentTama.setPetState(number);
-                                currentTama.setTamaPicture();
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
                                 break;
                             case 3:
@@ -93,5 +92,26 @@ public class GameLoader {
         }
         //System.out.println(Driver.getTamas()[0]);
         //System.out.println(Driver.getTamas()[1]);
+    }
+
+    public static void readFile(int j) {
+        try {
+            reader = new Scanner(file);
+        }
+        catch(Exception FileNotFoundException) {
+        }
+        String name = "";
+        double[] ints = new double[5];
+
+        name = reader.next();
+
+        int i = 0;
+        while(reader.hasNext()) {
+            if(reader.hasNextInt()) {
+                ints[i] = reader.nextInt();
+                i++;
+            }
+            reader.next();
+        }
     }
 }

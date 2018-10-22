@@ -18,8 +18,7 @@ public class WindowActivation implements WindowListener {
 
     @Override
     public void windowOpened(WindowEvent e) {
-        GameLoader.makeFile();
-        GameLoader.readFile();
+        //GameLoader.readFile();
 
         Tama currentTama = tamas.getTama();
         currentTama.setTamaPicture();

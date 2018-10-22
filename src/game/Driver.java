@@ -1,5 +1,6 @@
 package game;
 
+import game.file.GameLoader;
 import game.file.WindowActivation;
 
 import javax.swing.*;
@@ -15,8 +16,11 @@ public class Driver {
     public static Tamas tamas;
 
     public static void main(String[] args) {
-        Tama jerry = new Tama("jerry", "jerry");
-        Tama terry = new Tama("terry", "terry");
+        GameLoader.makeFile();
+        int[] values = GameLoader.readFile();
+        Tama jerry = new Tama("jerry", "jerry", values);
+        values = GameLoader.readFile();
+        Tama terry = new Tama("terry", "terry", values);
         tamas = new Tamas(jerry, new Tama[]{jerry, terry}, 0);
 
         //Tamas = new Tama[2];

@@ -30,7 +30,71 @@ public class GameLoader {
         }
     }
 
-    public static void readFile() {
+//    public static void readFile() {
+//        try {
+//            reader = new Scanner(file);
+//            reader.useDelimiter(System.getProperty("line.separator"));
+//        } catch (Exception FileNotFound) {
+//            System.out.println("Scanner could not find file: " + file);
+//            System.out.println("Setting default settings.");
+//        }
+//
+//        //TODO: Make readFile read two Strings than the rest numbers(doubles) wuuut
+//
+//        while(reader.hasNext()) {
+//            String gameState = "";
+//            gameState += reader.next();
+//
+//            int currentCount = 0;
+//            //System.out.println("game state: " + gameState);
+//            String strs = "";
+//            for (int x = 0; x < gameState.length(); x++) {
+//                strs += gameState.substring(x, x+1);
+//
+//                if(gameState.substring(x, x+1).equals(" ")) {
+//
+//                    if (strs.matches("\\d+ ")) {
+//                        strs = strs.replaceAll("\\s", "");
+//                        int number = Integer.parseInt(strs);
+//                        Driver.tamas.setTamaIndex(tamaOn);
+//                        //Driver.tamas.setTamaIndex(tamaOn);
+//                        Tama currentTama = Driver.tamas.getTama();
+//                        switch (currentCount) {
+//                            default:
+//                                System.out.println("That didn't work:" + number + ", counter at " + currentCount);
+//                                break;
+//                            case 0:
+//                                currentTama.setFood(number);
+//                                //System.out.println("GAME LOADER: " + "food" + Driver.getTama().getFood());
+//                                break;
+//                            case 1:
+//                                currentTama.setHealth(number);
+//                                //System.out.println("GAME LOADER: " + Driver.getTama().getHealth());
+//                                break;
+//                            case 2:
+//                                currentTama.setPetState(number);
+//                                //System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
+//                                break;
+//                            case 3:
+//                                currentTama.setPoop(number);
+//                                //System.out.println("GAME LOADER: " + Driver.getTama().getPoop());
+//                                break;
+//                            case 4:
+//                                currentTama.setExp(number);
+//                                //System.out.println("GAME LOADER: " + Driver.getTama().getExp());
+//                        }
+//                        currentCount++;
+//                    }
+//                    strs = "";
+//                }
+//            }
+//            tamaOn++;
+//        }
+//        //System.out.println(Driver.getTamas()[0]);
+//        //System.out.println(Driver.getTamas()[1]);
+//    }
+
+    public static int[] readFile() {
         try {
             reader = new Scanner(file);
             reader.useDelimiter(System.getProperty("line.separator"));
@@ -39,71 +103,10 @@ public class GameLoader {
             System.out.println("Setting default settings.");
         }
 
-        //TODO: Make readFile read two Strings than the rest numbers(doubles) wuuut
-
-        while(reader.hasNext()) {
-            String gameState = "";
-            gameState += reader.next();
-
-            int currentCount = 0;
-            //System.out.println("game state: " + gameState);
-            String strs = "";
-            for (int x = 0; x < gameState.length(); x++) {
-                strs += gameState.substring(x, x+1);
-
-                if(gameState.substring(x, x+1).equals(" ")) {
-
-                    if (strs.matches("\\d+ ")) {
-                        strs = strs.replaceAll("\\s", "");
-                        int number = Integer.parseInt(strs);
-                        Driver.tamas.setTamaIndex(tamaOn);
-                        //Driver.tamas.setTamaIndex(tamaOn);
-                        Tama currentTama = Driver.tamas.getTama();
-                        switch (currentCount) {
-                            default:
-                                System.out.println("That didn't work:" + number + ", counter at " + currentCount);
-                                break;
-                            case 0:
-                                currentTama.setFood(number);
-                                //System.out.println("GAME LOADER: " + "food" + Driver.getTama().getFood());
-                                break;
-                            case 1:
-                                currentTama.setHealth(number);
-                                //System.out.println("GAME LOADER: " + Driver.getTama().getHealth());
-                                break;
-                            case 2:
-                                currentTama.setPetState(number);
-                                //System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
-                                break;
-                            case 3:
-                                currentTama.setPoop(number);
-                                //System.out.println("GAME LOADER: " + Driver.getTama().getPoop());
-                                break;
-                            case 4:
-                                currentTama.setExp(number);
-                                //System.out.println("GAME LOADER: " + Driver.getTama().getExp());
-                        }
-                        currentCount++;
-                    }
-                    strs = "";
-                }
-            }
-            tamaOn++;
-        }
-        //System.out.println(Driver.getTamas()[0]);
-        //System.out.println(Driver.getTamas()[1]);
-    }
-
-    public static void readFile(int j) {
-        try {
-            reader = new Scanner(file);
-        }
-        catch(Exception FileNotFoundException) {
-        }
         String name = "";
-        double[] ints = new double[5];
+        int[] ints = new int[5];
 
-        name = reader.next();
+        name = reader.next(); // what is this??
 
         int i = 0;
         while(reader.hasNext()) {
@@ -113,5 +116,7 @@ public class GameLoader {
             }
             reader.next();
         }
+
+        return ints;
     }
 }

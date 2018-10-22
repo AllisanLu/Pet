@@ -33,7 +33,7 @@ public class Tamas {
     }
 
     public Tama getTama() {
-        System.out.println("Tama at: " + tamaIndex);
+        //System.out.println("Tama at: " + tamaIndex);
         return allTamas[tamaIndex];
     }
 

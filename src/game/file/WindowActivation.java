@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import static game.Driver.tamas;
+
 public class WindowActivation implements WindowListener {
 
     public WindowActivation(JFrame show) {
@@ -19,13 +21,10 @@ public class WindowActivation implements WindowListener {
         GameLoader.makeFile();
         GameLoader.readFile();
 
-        Tama currentTama = Driver.tamas.getTama();
-         //System.out.println(Tama.getInstance());
+        Tama currentTama = tamas.getTama();
         currentTama.setTamaPicture();
         Driver.changeTamaLabel(currentTama.getTom());
-        //System.out.println("hi");
     }
-    //hey so I'ms leave this here o/ bob says hi
 
     @Override
     public void windowClosing(WindowEvent e) {

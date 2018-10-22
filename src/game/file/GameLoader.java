@@ -78,7 +78,6 @@ public class GameLoader {
                                 break;
                             case 3:
                                 currentTama.setPoop(number);
-                                System.out.println(number);
                                 //System.out.println("GAME LOADER: " + Driver.getTama().getPoop());
                                 break;
                             case 4:

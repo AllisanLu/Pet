@@ -145,7 +145,6 @@ public class Tama {
 
     public void addPoop() {
         if (poops.size() >= 15) {
-            System.out.println("Pet Died");
             petState = 0;
             setTamaPicture();
             Driver.changeTamaLabel(tom);
@@ -159,8 +158,12 @@ public class Tama {
     }
 
     public void removePoop() {
+        int size = poops.size();
         for (int i = 0; i < poops.size(); i++) {
             Driver.removePoop(poops.get(i));
+        }
+        for(int i = 0; i < size; i++){
+            poops.remove(poops.get(0));
         }
     }
 

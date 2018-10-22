@@ -113,10 +113,6 @@ public class Tama {
         return expPerFood;
     }
 
-    public void setExpPerFood(int expPerFood) {
-        this.expPerFood = expPerFood;
-    }
-
     public void setTamaPicture() {
         switch (petState) {
             default:

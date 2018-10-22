@@ -103,7 +103,6 @@ public class Driver {
         JButton clean = new JButton(cleanIcon);
         clean.addActionListener(event -> {
             Tama currentTama = tamas.getTama();
-
             currentTama.removePoop();
             System.out.println("ALL THE POOP IS GONE" + "\n" + "poop: " + currentTama.getPoop());
         });
@@ -117,7 +116,6 @@ public class Driver {
             currentTama.reset();
             changeTamaLabel(currentTama.getTom());
             currentTama.removePoop();
-            System.out.println("DERP: RESET INCOMING: \n" + currentTama);
         });
         reset.setBounds(136, 227, resetIcon.getIconWidth(), resetIcon.getIconHeight());
         show.add(reset);

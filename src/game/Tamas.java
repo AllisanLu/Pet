@@ -1,18 +1,10 @@
 package game;
 
 public class Tamas {
-    public Tama currentTama;
     private Tama[] allTamas;
     private int tamaIndex;
 
-    public Tamas() {
-        currentTama = new Tama();
-        allTamas = new Tama[2];
-        tamaIndex = 0;
-    }
-
-    public Tamas(Tama currentTama, Tama[] allTamas, int currentTamaIndex) {
-        this.currentTama = currentTama;
+    public Tamas(Tama[] allTamas, int currentTamaIndex) {
         this.allTamas = allTamas;
         this.tamaIndex = currentTamaIndex;
     }
@@ -33,7 +25,6 @@ public class Tamas {
     }
 
     public Tama getTama() {
-        //System.out.println("Tama at: " + tamaIndex);
         return allTamas[tamaIndex];
     }
 

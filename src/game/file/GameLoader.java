@@ -104,26 +104,29 @@ public class GameLoader {
             System.out.println("Setting default settings.");
         }
 
-        String name = "";
-        int[] ints = new int[5];
-        int at = 0;
+        if(reader.hasNext()) {
+            int[] ints = new int[5];
+            int at = 0;
 
-        name = reader.next(); // what is this??
+            String name = reader.next();
 
-        int i = 0;
-        while(reader.hasNext()) {
-            if(reader.hasNextInt()) {
-                ints[i] = reader.nextInt();
-                i++;
+            int i = 0;
+            while (reader.hasNext()) {
+                if (reader.hasNextInt()) {
+                    ints[i] = reader.nextInt();
+                    i++;
+                }
+                reader.next();
             }
-            reader.next();
+
+            Tama current = new Tama(name, name, ints);
+            Tama[] array = new Tama[2];
+            array[at] = current;
+            at++;
+
+            return array;
         }
-
-        Tama current = new Tama(name, name, ints);
-        Tama[] array = new Tama[2];
-        array[at] = current;
-        at++;
-
-        return array;
+        Tama[] tamaArray = { new Tama("Jerry", "jerry", new int[5]), new Tama("Terry", "terry", new int[5])};
+        return tamaArray;
     }
 }

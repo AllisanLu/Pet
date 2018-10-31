@@ -11,18 +11,8 @@ import static game.Driver.tamas;
 
 public class WindowActivation implements WindowListener {
 
-    public WindowActivation(JFrame show) {
-        System.out.println("Windows Activated");
-        show.addWindowListener(this);
-    }
-
     @Override
     public void windowOpened(WindowEvent e) {
-        //GameLoader.readFile();
-
-        Tama currentTama = tamas.getTama();
-        currentTama.setTamaPicture();
-        Driver.changeTamaLabel(currentTama.getTom());
     }
 
     @Override

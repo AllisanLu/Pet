@@ -5,6 +5,7 @@ import game.file.WindowActivation;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowListener;
 import java.util.Calendar;
 
 public class Driver {
@@ -12,17 +13,12 @@ public class Driver {
     public static final int SHOW_WIDTH = 206;
     public static final int SHOW_HEIGHT = 279;
     private static JLabel currentTamaPic = new JLabel("");
-    //private static Tama[] Tamas;
     public static Tamas tamas;
 
     public static void main(String[] args) {
-        GameLoader.makeFile();
-        tamas = new Tamas(GameLoader.readFile()[1], GameLoader.readFile(), 0);
 
-        //Tamas = new Tama[2];
-        //Tamas[0] = jerry;
-        //Tamas[1] = terry;
-        WindowActivation test = new WindowActivation(show);
+        GameLoader.makeFile();
+        tamas = new Tamas(GameLoader.readFile(), 0);
 
         startingShow();
 
@@ -50,6 +46,8 @@ public class Driver {
         health.setBounds(65, 35, healthIcon.getIconWidth(), healthIcon.getIconHeight());
         show.add(health);
 
+        show.addWindowListener(new WindowActivation());
+
         createButtons();
 
         JPopupMenu pop = new JPopupMenu();
@@ -63,8 +61,7 @@ public class Driver {
         pop.add(jerryMenu);
         pop.addSeparator();
         pop.add(terryMenu);
-        
-        TamaSwitcher tamSwitch = new TamaSwitcher(terryMenu, jerryMenu);
+        new TamaSwitcher(terryMenu, jerryMenu);
 
         show.add(panel);
         show.setVisible(true);
@@ -148,15 +145,6 @@ public class Driver {
             }
         }).start();
     }
-
-
-//    public static Tama getTama() {
-//        return Tamas[Tama.getInstance()];
-//    }
-//
-//    public static Tama[] getTamas() {
-//        return Tamas;
-//    }
 
     public static void changeTamaLabel(JLabel newTama) {
         show.remove(currentTamaPic);

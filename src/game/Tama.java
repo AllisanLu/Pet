@@ -30,42 +30,14 @@ public class Tama {
      * @param name       Sets the name for Tama that user created.
      * @param folderName The folder where the data for the game.Tamas are saved.
      */
-    public Tama(String name, String folderName, int[] numbers) {
+    public Tama(String name, String folderName, int[] instanceVariables) {
+        food = instanceVariables[0];
+        health = instanceVariables[1];
+        petState = instanceVariables[2];
+        setPoop(instanceVariables[3]);
+        exp = instanceVariables[4];
         this.name = name;
         this.folderName = folderName;
-        this.lastTimeFed = System.currentTimeMillis();      //TODO: gotta fix last time fed
-            for(int x = 0; x < 5; x++) {
-                int number = numbers[x];
-                switch (x) {
-                    default:
-                        System.out.println("That didn't work:" + number + ", counter at " + x);
-                        break;
-                    case 0:
-                        this.food = number;
-                        //System.out.println("GAME LOADER: " + "food" + Driver.getTama().getFood());
-                        break;
-                    case 1:
-                        this.health = number;
-                        //System.out.println("GAME LOADER: " + Driver.getTama().getHealth());
-                        break;
-                    case 2:
-                        this.petState = number;
-                        //System.out.println("GAME LOADER: " + Driver.getTama().getPetState());
-                        break;
-                    case 3:
-                        this.setPoop(number);                                       //TODO I dont think this works
-                        //System.out.println("GAME LOADER: " + Driver.getTama().getPoop());
-                        break;
-                    case 4:
-                        this.exp = number;
-                        //System.out.println("GAME LOADER: " + Driver.getTama().getExp());
-                        break;
-                }
-            }
-//        this.food = 0;
-//        this.health = 0;
-//        this.petState = 0;
-//        this.exp = 0;
     }
 
     public String getName() {

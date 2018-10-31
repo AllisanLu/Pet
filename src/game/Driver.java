@@ -17,11 +17,7 @@ public class Driver {
 
     public static void main(String[] args) {
         GameLoader.makeFile();
-        int[] values = GameLoader.readFile();
-        Tama jerry = new Tama("jerry", "jerry", values);
-        values = GameLoader.readFile();
-        Tama terry = new Tama("terry", "terry", values);
-        tamas = new Tamas(jerry, new Tama[]{jerry, terry}, 0);
+        tamas = new Tamas(GameLoader.readFile()[1], GameLoader.readFile(), 0);
 
         //Tamas = new Tama[2];
         //Tamas[0] = jerry;

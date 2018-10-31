@@ -2,6 +2,7 @@ package game.file;
 
 import game.Driver;
 import game.Tama;
+import game.Tamas;
 
 import java.io.File;
 import java.util.Scanner;
@@ -94,7 +95,7 @@ public class GameLoader {
 //        //System.out.println(Driver.getTamas()[1]);
 //    }
 
-    public static int[] readFile() {
+    public static Tama[] readFile() {
         try {
             reader = new Scanner(file);
             reader.useDelimiter(System.getProperty("line.separator"));
@@ -105,6 +106,7 @@ public class GameLoader {
 
         String name = "";
         int[] ints = new int[5];
+        int at = 0;
 
         name = reader.next(); // what is this??
 
@@ -117,6 +119,11 @@ public class GameLoader {
             reader.next();
         }
 
-        return ints;
+        Tama current = new Tama(name, name, ints);
+        Tama[] array = new Tama[2];
+        array[at] = current;
+        at++;
+
+        return array;
     }
 }

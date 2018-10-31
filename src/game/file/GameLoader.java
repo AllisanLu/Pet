@@ -109,7 +109,6 @@ public class GameLoader {
             int at = 0;
 
             String name = reader.next();
-
             int i = 0;
             while (reader.hasNext()) {
                 if (reader.hasNextInt()) {
@@ -118,13 +117,13 @@ public class GameLoader {
                 }
                 reader.next();
             }
-
-            Tama current = new Tama(name, name, ints);
-            Tama[] array = new Tama[2];
-            array[at] = current;
+            System.out.println(name.toLowerCase());
+            Tama current = new Tama(name, name.toLowerCase(), ints);
+            Tama[] tamaArray = new Tama[2];
+            tamaArray[at] = current;
             at++;
 
-            return array;
+            return tamaArray;
         }
         Tama[] tamaArray = { new Tama("Jerry", "jerry", new int[5]), new Tama("Terry", "terry", new int[5])};
         return tamaArray;

@@ -1,11 +1,11 @@
 package game;
 
 import game.file.GameLoader;
-import game.file.WindowActivation;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.FileWriter;
 import java.util.Calendar;
 
 public class Driver {
@@ -21,8 +21,10 @@ public class Driver {
         tamas = new Tamas(GameLoader.readFile(), 0);
 
         startingShow();
-
         updateClock();
+        tamas.getTama().setTamaPicture();
+        changeTamaLabel(tamas.getTama().getTom());
+        System.out.println(tamas);
     }
 
     public static void startingShow() {
@@ -46,7 +48,30 @@ public class Driver {
         health.setBounds(65, 35, healthIcon.getIconWidth(), healthIcon.getIconHeight());
         show.add(health);
 
-        show.addWindowListener(new WindowActivation());
+        show.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                String[] labels = {"food: ", " health: ", " petState: ", " poop: ", " EXP: "};
+
+                try {
+                    FileWriter pen = new FileWriter(GameLoader.getFile());
+                    for (int i = 0; i < Driver.tamas.getTotalTamas(); i++) {
+                        Driver.tamas.setTamaIndex(i);
+                        Tama currentTama = Driver.tamas.getTama();
+                        pen.write(currentTama.getName() + " " );
+                        int[] values = {currentTama.getFood(), currentTama.getHealth(), currentTama.getPetState(), currentTama.getPoop(), currentTama.getExp()};
+
+                        for (int k = 0; k < values.length; k++) {
+                            pen.write(labels[k] + values[k]);
+                        }
+                        pen.write(" " + System.getProperty("line.separator"));
+                    }
+                    pen.close();
+                } catch (Exception IOException) {
+                    System.out.println("file Writer messed up. \n Could not save game.");
+                }
+            }
+        });
 
         createButtons();
 

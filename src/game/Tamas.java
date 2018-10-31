@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Arrays;
+
 public class Tamas {
     private Tama[] allTamas;
     private int tamaIndex;
@@ -31,5 +33,9 @@ public class Tamas {
 
     public int getTotalTamas() {
         return allTamas.length;
+    }
+
+    public String toString() {
+        return Arrays.toString(allTamas);
     }
 }

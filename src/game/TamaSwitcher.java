@@ -13,6 +13,7 @@ public class TamaSwitcher implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println(!e.getActionCommand().equalsIgnoreCase(Driver.tamas.getTama().getName()));
         if (!e.getActionCommand().equalsIgnoreCase(Driver.tamas.getTama().getName())) {
             Tama currentTama = Driver.tamas.getTama();
             currentTama.removePoop();
@@ -20,7 +21,7 @@ public class TamaSwitcher implements ActionListener {
             Driver.tamas.setTamaIndex(e.getActionCommand());
 
             currentTama = Driver.tamas.getTama();
-
+            System.out.println(currentTama);
             currentTama.setTamaPicture();
             Driver.changeTamaLabel(currentTama.getTom());
 

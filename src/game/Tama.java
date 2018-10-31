@@ -3,8 +3,6 @@ package game;
 import javax.swing.*;
 import java.util.ArrayList;
 
-import static game.Driver.tamas;
-
 public class Tama {
 
     private String name;
@@ -98,6 +96,9 @@ public class Tama {
         this.exp = exp;
     }
 
+    public String getFolderName() {
+        return folderName;
+    }
     /**
      * Increases the petState and changes the picture to the next level of the Tama.
      */

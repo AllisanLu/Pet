@@ -17,7 +17,7 @@ public class Tamas {
 
     public void setTamaIndex(String strs) {
         for (int i = 0; i < allTamas.length; i++) {
-            if (allTamas[i].getName().equalsIgnoreCase(strs)) {
+            if (!allTamas[i].getName().equalsIgnoreCase(strs)) {
                 tamaIndex = i;
                 break;
             }

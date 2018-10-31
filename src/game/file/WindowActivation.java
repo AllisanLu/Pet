@@ -13,6 +13,9 @@ public class WindowActivation implements WindowListener {
 
     @Override
     public void windowOpened(WindowEvent e) {
+        Tama currentTama = Driver.tamas.getTama();
+        currentTama.setTamaPicture();
+        Driver.changeTamaLabel(currentTama.getTom());
     }
 
     @Override

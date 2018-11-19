@@ -3,50 +3,23 @@ package game;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class Tama {
+public class Tama implements java.io.Serializable {
 
-    private String name;
-    private int food, health, petState, poop;
-    private JLabel tom;
-    private int exp;
-    private int expPerFood = 10;            //TODO: was there a reason why expPerFood was an array if so, I can change it back
+    private int food, health, petState;
+    private transient JLabel tamaPic;
+    private int exp, expPerFood;
     private double lastTimeFed;
-    private static int currentInstance;
     private String folderName;
-    //for adding and removing poop
     private ArrayList<JLabel> poops = new ArrayList<JLabel>();
 
     /**
-     * Sets minimum basic instance variables in Tama. Should
-     * only be used if there is an error retrieving data from the txt files.
+     * Sets Tama to default values as if it was starting new.
      */
-    public Tama(){
-        this.food = 0;
-        this.health = 0;
-        this.poop = 0;
-        this.lastTimeFed = 0;
-    }
+    public Tama(String path) {
+        expPerFood = 10;
 
-    /**
-     * @param name Sets the name for Tama that user created.
-     * @param folderName The folder where the data for the game.Tamas are saved.
-     */
-    public Tama(String name, String folderName) {      //String folderName what is this for
-        this.food = 0;
-        this.name = name;
-        this.health = 0;
-        this.petState = 0;
-        this.exp = 0;
-        this.folderName = folderName;
-        this.lastTimeFed = System.currentTimeMillis();      //TODO: gotta fix last time fed
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        folderName = path;
+        setTamaPic();
     }
 
     public int getFood() {
@@ -57,11 +30,9 @@ public class Tama {
         this.food = food;
     }
 
-    public int getPoop(){ return poop; }
+    public int getPoop(){ return poops.size(); }
 
-    public void setPoop(int poop) { this.poop = poop;}
-
-    public JLabel getTom() { return tom; }
+    public JLabel getTamaPic() { return tamaPic; }
 
     public int getHealth() {
         return health;
@@ -93,12 +64,6 @@ public class Tama {
         this.exp = exp;
     }
 
-    public static int getInstance() { return currentInstance; }
-
-    public static void setInstance(int currentTamaInstance) {
-        Tama.currentInstance = currentTamaInstance;
-    }
-
     /**
      * Increases the petState and changes the picture to the next level of the Tama.
      */
@@ -107,8 +72,8 @@ public class Tama {
             this.petState += 1;
 
             this.exp = 0;
-            setTamaPicture();
-            Driver.changeTamaLabel(tom);
+            setTamaPic();
+            Driver.changeTamaLabel(tamaPic);
         }
     }
 
@@ -128,58 +93,57 @@ public class Tama {
         this.expPerFood = expPerFood;
     }
 
-    public void setTamaPicture() {
+    public void setTamaPic() {
         switch(petState) {
             default:
-                System.out.println("Value in Windows setTamaPicture was not correct.");
+                System.out.println("Value in Windows petState was not correct:" + petState);
                 break;
+
             case 0:
-                ImageIcon ghostIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Dead.gif"));
-                JLabel ghost = new JLabel(ghostIcon);
-                ghost.setBounds((Driver.SHOW_WIDTH - ghostIcon.getIconWidth())/2 , 150, ghostIcon.getIconWidth(), ghostIcon.getIconHeight());
-                tom = ghost;
+                ImageIcon ghostIcon = new ImageIcon(folderName + "dead.gif");
+                JLabel ghost = fixTamaDimensions(ghostIcon);
+                tamaPic = ghost;
                 break;
 
             case 1:
-                ImageIcon eggIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/First.gif"));
-                JLabel egg = new JLabel(eggIcon);
-                egg.setBounds((Driver.SHOW_WIDTH - eggIcon.getIconWidth())/2, 170, eggIcon.getIconWidth(), eggIcon.getIconHeight());
-                tom = egg;
+                ImageIcon eggIcon = new ImageIcon(folderName + "First.gif");
+                JLabel egg = fixTamaDimensions(eggIcon);
+                tamaPic = egg;
                 break;
 
             case 2:
-                ImageIcon lizardIcon = new ImageIcon(Tama.class.getResource("Images/" + folderName + "/Second.gif"));
-                JLabel lizard = new JLabel(lizardIcon);
-
-                lizard.setBounds((Driver.SHOW_WIDTH - lizardIcon.getIconWidth())/2, 150, lizardIcon.getIconWidth(), lizardIcon.getIconHeight());
-                tom = lizard;
-
+                ImageIcon lizardIcon = new ImageIcon(folderName + "Second.gif");
+                JLabel lizard = fixTamaDimensions(lizardIcon);
+                tamaPic = lizard;
                 break;
         }
     }
 
+    private JLabel fixTamaDimensions(ImageIcon icon) {
+        JLabel rtn = new JLabel(icon);
+        rtn.setBounds((Constants.GUIDimensions.GUI_WIDTH - icon.getIconWidth())/2, Constants.GUIDimensions.GUI_HEIGHT * 6/10, icon.getIconWidth(), icon.getIconHeight());
+        return rtn;
+    }
+
     public void addPoop() {
-        if(this.poop >= 15) {
+        if(poops.size() >= 15) {
             System.out.println("Pet Died");
             petState = 0;
-            setTamaPicture();
-            Driver.changeTamaLabel(tom);
+            setTamaPic();
+            Driver.changeTamaLabel(tamaPic);
         }
         else {
-            ImageIcon poopIcon = new ImageIcon(Tama.class.getResource("Images/poo.png"));
+            ImageIcon poopIcon = new ImageIcon(Constants.Paths.IMAGES + "poo.png");
             JLabel poop = new JLabel(poopIcon);
-            poop.setBounds((Driver.SHOW_WIDTH-tom.getWidth())/2 + (int) (Math.random() * 50), 180 + (int) (Math.random() * 5), poopIcon.getIconWidth(), poopIcon.getIconHeight());
+            poop.setBounds((Constants.GUIDimensions.GUI_WIDTH - tamaPic.getWidth())/2 + (int) (Math.random() * 50), 180 + (int) (Math.random() * 5), poopIcon.getIconWidth(), poopIcon.getIconHeight());
             poops.add(poop);
-            this.poop++;
             Driver.addPoop(poop);
         }
     }
 
     public void removePoop() {
-        for (int i = 0; i < poops.size(); i++) {
-            Driver.removePoop(poops.get(i));
-        }
-        poop = 0;
+        Driver.removePoop(poops);
+        poops.clear();
     }
 
     /**
@@ -187,13 +151,11 @@ public class Tama {
      * running of the application. @return String of those variables.
      */
     public String toString() {
-        return "Name: " + name + "\n" +
-                "Tama Instance: " + currentInstance + "\n" +
-                "Folder Name: " + folderName + "\n" +
+        return "Folder Name: " + folderName + "\n" +
                 "Food: " + food + "\n" +
                 "Health: " + health + "\n" +
                 "Pet State: " + petState + "\n" +
-                "Poop: " + poop + "\n" +
+                "Poop: " + poops.size() + "\n" +
                 "Exp: " + exp + "\n" +
                 "Exp Per Food: " + expPerFood + "\n" +
                 "Last Time Fed: " + lastTimeFed + "\n" +
@@ -209,6 +171,6 @@ public class Tama {
         exp = 0;
         food = 0;
         lastTimeFed = System.currentTimeMillis();
-        setTamaPicture();
+        setTamaPic();
     }
 }

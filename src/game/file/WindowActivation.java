@@ -1,40 +1,39 @@
 package game.file;
 
+import game.Constants;
 import game.Driver;
-import game.Tama;
-
 import javax.swing.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class WindowActivation implements WindowListener {
 
     public WindowActivation(JFrame show) {
-        System.out.println("Windows Activated");
         show.addWindowListener(this);
     }
 
     @Override
     public void windowOpened(WindowEvent e) {
-        GameLoader.makeFile();
-        GameLoader.readFile();
-
-        Tama currentTama = Driver.tamas.getTama();
-         //System.out.println(Tama.getInstance());
-        currentTama.setTamaPicture();
-        Driver.changeTamaLabel(currentTama.getTom());
-
-        int poop = currentTama.getPoop();
-        currentTama.setPoop(0);
-        for(int i = 0; i < poop; i++)
-            currentTama.addPoop();
-        //System.out.println("hi");
+        
     }
+
     //hey so I'ms leave this here o/ bob says hi
 
     @Override
     public void windowClosing(WindowEvent e) {
-        new GameSaver();
+        try {
+            FileOutputStream file = new FileOutputStream(Constants.Files.SAVED_DATA);
+            ObjectOutputStream output = new ObjectOutputStream(file);
+            output.writeObject(Driver.tamas);
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
     }
 
     @Override

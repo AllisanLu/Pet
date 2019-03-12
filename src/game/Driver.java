@@ -16,7 +16,6 @@ public class Driver {
     public static Tamas tamas;
 
     public static void main(String[] args) throws IOException {
-
         if (Constants.Files.SAVED_DATA.createNewFile())           //Returns true if File doesn't exist false otherwise.
             tamas = new Tamas();
         else {
